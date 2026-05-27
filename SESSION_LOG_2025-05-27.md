@@ -28,6 +28,9 @@ This session covered three areas: launch preparation (Zoom call planning for the
 | `privacy-policy.html` | Modified | Added GA4/Meta Pixel |
 | `thank-you.html` | **Created** | New branded form confirmation + conversion tracking page |
 | `get-started.html` | **Created** | New paid advertising landing page |
+| `images/photos/` | **Created** | New folder — 8 stock photos with clean filenames |
+| `index.html` | Modified | Hero background photo + 6 gallery photos wired up |
+| `css/global.css` | Modified | Gallery item fix + empty icon placeholder fix (grey blocks) |
 
 ---
 
@@ -216,6 +219,62 @@ These fire in addition to the standard `PageView` events from the analytics bloc
 
 ---
 
+### 9. `images/photos/` — Stock Photos Added
+
+**Why:** The homepage had placeholder gradient blocks in the gallery and a solid navy hero with no real imagery. Stock photos significantly improve first-impression trust, especially for paid ad traffic landing on the site.
+
+**Source folder:** `/Users/dillonbond/Documents/Angel Files (Desktop)/JollyGood Companions/Home care Website Photos/`
+
+**Files copied with clean web-safe names (no spaces, lowercase, hyphens):**
+
+| New Filename | Description | Used Where |
+|---|---|---|
+| `hero-background.jpg` | Caregiver + elderly woman on park bench with phone | Homepage hero background |
+| `gallery-outdoor-walk.jpg` | Caregiver walking outdoors with laughing elderly man | Gallery slot 1 |
+| `gallery-garden-rose.jpg` | Caregiver hugging elderly woman holding a rose | Gallery slot 2 |
+| `gallery-car-walker.jpg` | Caregiver helping elderly woman with walker out of car | Gallery slot 3 |
+| `gallery-reading-tea.jpg` | Caregiver reading with elderly woman over tea | Gallery slot 4 |
+| `gallery-indoor-walker.jpg` | Caregiver helping elderly man with walker indoors | Gallery slot 5 |
+| `gallery-wheelchair-smile.jpg` | Caregiver smiling with elderly woman in wheelchair | Gallery slot 6 |
+| `gallery-car-assist.jpg` | Caregiver helping elderly person into car | Spare — not currently used |
+
+**Hero background implementation:**
+```css
+/* Before */
+background: linear-gradient(155deg, #0d1f2d 0%, #25435D 50%, #1e3a50 100%);
+
+/* After — photo layered under semi-transparent navy gradient */
+background:
+  linear-gradient(155deg, rgba(13,31,45,0.88) 0%, rgba(37,67,93,0.82) 50%, rgba(30,58,80,0.88) 100%),
+  url('images/photos/hero-background.jpg') center/cover no-repeat;
+```
+
+**Gallery implementation:** Added `nth-child` CSS rules in `index.html` `<style>` block targeting each `.gallery-item-inner` with the correct photo as `background-image`. Updated `global.css` `.gallery-item-inner` to remove the old `opacity: 0.3` (placeholder emoji style) and add `background-size: cover`.
+
+---
+
+### 10. `css/global.css` — Grey Block Fix (Empty Icon Placeholders)
+
+**Why:** Several icon container `<div>` elements across the site (`.why-icon`, `.service-full-icon`, `.contact-detail-icon`, `.lp-service-icon`, `.partner-logo-placeholder`) were styled with a background color and dimensions but had no emoji or icon content inside them. They rendered as grey/teal/colored boxes.
+
+**Affected pages:** `index.html`, `services.html`, `contact.html`, `privacy-policy.html`, `get-started.html`, `partners.html`
+
+**Fix:** Added one rule block at the bottom of `global.css` using `!important` to override the `display: flex` declarations in each page's inline `<style>` block:
+
+```css
+.service-full-icon,
+.why-icon,
+.contact-detail-icon,
+.lp-service-icon,
+.partner-logo-placeholder {
+  display: none !important;
+}
+```
+
+One rule in one file — fixed across all six pages simultaneously.
+
+---
+
 ## Marketing Strategy Discussed
 
 The following recommendations were documented during the session. These are strategic, not code changes.
@@ -262,7 +321,7 @@ Care.com is primarily useful for **recruiting caregivers**, not acquiring client
 
 ```
 jg_companions_website_rebuild/
-├── index.html                 ← Homepage (schema + analytics added)
+├── index.html                 ← Homepage (schema + analytics + hero photo + gallery)
 ├── services.html              ← Services page (analytics added)
 ├── team.html                  ← Team page (analytics added)
 ├── testimonials.html          ← Testimonials page (analytics added)
@@ -271,18 +330,28 @@ jg_companions_website_rebuild/
 ├── privacy-policy.html        ← Privacy Policy (analytics added)
 ├── thank-you.html             ← NEW: Form confirmation + conversion tracking
 ├── get-started.html           ← NEW: Paid ads landing page (no nav)
-├── CNAME                      ← Contains: jollygoodcompanions.com
+├── CNAME                      ← Contains: jollygoodcompanions.com (not in git — staging)
+├── .nojekyll                  ← Prevents GitHub Pages from running Jekyll
 ├── LAUNCH_GUIDE.md            ← Client deployment guide (Zoom annotations added)
 ├── SESSION_LOG_2025-05-27.md  ← This file
 ├── README.md                  ← Developer reference
 ├── css/
-│   └── global.css             ← All shared styles, brand variables
+│   └── global.css             ← All shared styles, brand variables, icon fix
 ├── js/
 │   └── main.js                ← Nav, scroll, analytics events (updated)
 └── images/
     ├── logo-white.png         ← White transparent logo (nav + footer)
     ├── logo-color.png         ← Color transparent logo
-    └── icon.png               ← Icon only (favicon)
+    ├── icon.png               ← Icon only (favicon)
+    └── photos/                ← NEW: Stock photos (8 files)
+        ├── hero-background.jpg
+        ├── gallery-outdoor-walk.jpg
+        ├── gallery-garden-rose.jpg
+        ├── gallery-car-walker.jpg
+        ├── gallery-reading-tea.jpg
+        ├── gallery-indoor-walker.jpg
+        ├── gallery-wheelchair-smile.jpg
+        └── gallery-car-assist.jpg    ← Spare, not currently placed
 ```
 
 ---
@@ -292,12 +361,13 @@ jg_companions_website_rebuild/
 - [ ] Web3Forms API key — insert into `contact.html` and `get-started.html` (requires Zoom Call 1)
 - [ ] GA4 Measurement ID — plug in across all pages once Angel creates the GA4 property
 - [ ] Meta Pixel ID — plug in across all pages once Angel's Meta Business account is set up
-- [ ] Real photos — needed before running any Meta Ads
+- [x] Real photos — 8 stock photos added to `images/photos/`, wired into homepage hero + gallery
 - [ ] Google Business Profile — Angel should claim/create this ASAP (separate from the website)
 - [ ] Zapier SMS alert — set up before registering on A Place for Mom
 - [ ] A Place for Mom registration — after Zapier is set up
 - [ ] Google review link — create after GBP is live
 - [ ] Domain transfer (Squarespace → Porkbun) — Zoom Call 1 agenda item
+- [ ] `gallery-car-assist.jpg` spare photo — could be placed on services.html if desired
 
 ---
 
