@@ -1326,3 +1326,16 @@ textarea.form-control {
     right: 1rem;
   }
 }
+
+/* --------------------------------------------------------------------------
+   Hide empty icon placeholder blocks (no content — show as grey boxes)
+   These were styled to hold emoji icons but the content was never added.
+   Using !important to override the display:flex in page-level <style> blocks.
+   -------------------------------------------------------------------------- */
+.service-full-icon,
+.why-icon,
+.contact-detail-icon,
+.lp-service-icon,
+.partner-logo-placeholder {
+  display: none !important;
+}
