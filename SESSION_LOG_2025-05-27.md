@@ -259,19 +259,20 @@ background:
 
 **Affected pages:** `index.html`, `services.html`, `contact.html`, `privacy-policy.html`, `get-started.html`, `partners.html`
 
-**Fix:** Added one rule block at the bottom of `global.css` using `!important` to override the `display: flex` declarations in each page's inline `<style>` block:
+**Fix (first attempt):** Added one rule block at the bottom of `global.css` using `!important` to override the `display: flex` declarations in each page's inline `<style>` block. This cleared the blocks on most pages but services.html and partners.html still showed grey blocks — the inline `<style>` block cascade order was winning in some browsers.
+
+**Fix (final):** Went directly into the `<style>` block of each affected page and replaced the full icon rule with `display: none`:
 
 ```css
-.service-full-icon,
-.why-icon,
-.contact-detail-icon,
-.lp-service-icon,
-.partner-logo-placeholder {
-  display: none !important;
-}
+/* Applied directly in each page's <style> block */
+.service-full-icon    { display: none; }  /* services.html */
+.partner-logo-placeholder { display: none; }  /* partners.html */
+.why-icon             { display: none; }  /* index.html */
+.contact-detail-icon  { display: none; }  /* contact.html */
+.lp-service-icon      { display: none; }  /* get-started.html */
 ```
 
-One rule in one file — fixed across all six pages simultaneously.
+No cascade ambiguity — the rule that defines the element also hides it. `global.css` retains the `!important` block as a belt-and-suspenders fallback.
 
 ---
 
