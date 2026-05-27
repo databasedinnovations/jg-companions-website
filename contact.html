@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us — Jollygood Companions</title>
+  <meta name="description" content="Get in touch with Jollygood Companions in Kansas City. Call (913) 608-7373 or email us to discuss your companion care needs." />
+
+  <link rel="icon" href="images/icon.png" type="image/png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/global.css" />
+
+  <style>
+    .contact-layout {
+      display: grid;
+      grid-template-columns: 1fr 1.6fr;
+      gap: 3rem;
+      align-items: start;
+    }
+
+    .contact-sidebar h2 {
+      font-size: 1.5rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .contact-sidebar > p {
+      color: var(--color-text-muted);
+      margin-bottom: 2rem;
+    }
+
+    .contact-detail-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .contact-detail-item {
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+    }
+
+    .contact-detail-icon {
+      width: 44px;
+      height: 44px;
+      background: var(--color-primary-light);
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      flex-shrink: 0;
+    }
+
+    .contact-detail-body h4 {
+      font-size: 0.82rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--color-text-muted);
+      margin-bottom: 0.2rem;
+    }
+
+    .contact-detail-body a,
+    .contact-detail-body p {
+      font-size: 1rem;
+      color: var(--color-text-dark);
+      font-weight: 600;
+      margin: 0;
+    }
+
+    .contact-detail-body a:hover {
+      color: var(--color-primary);
+    }
+
+    .contact-form-card {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border-light);
+      border-radius: var(--radius-lg);
+      padding: 2.5rem;
+      box-shadow: var(--shadow-md);
+    }
+
+    .contact-form-card h2 {
+      margin-bottom: 0.5rem;
+    }
+
+    .contact-form-card > p {
+      color: var(--color-text-muted);
+      margin-bottom: 1.75rem;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .form-note {
+      font-size: 0.82rem;
+      color: var(--color-text-muted);
+      margin-top: 0.75rem;
+    }
+
+    .form-note a {
+      color: var(--color-primary-mid);
+    }
+
+    .availability-strip {
+      background: var(--color-surface-alt);
+      border-radius: var(--radius-md);
+      padding: 1.5rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      margin-top: 2.5rem;
+    }
+
+    .availability-strip .avail-icon {
+      font-size: 1.5rem;
+      flex-shrink: 0;
+    }
+
+    .availability-strip h4 {
+      font-size: 0.95rem;
+      margin-bottom: 0.2rem;
+    }
+
+    .availability-strip p {
+      font-size: 0.88rem;
+      color: var(--color-text-muted);
+      margin: 0;
+    }
+
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+    .fade-in.in-view {
+      opacity: 1;
+      transform: none;
+    }
+
+    @media (max-width: 900px) {
+      .contact-layout {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+
+  <!-- =====================================================================
+       ANALYTICS — Replace placeholder IDs before going live
+       ===================================================================== -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+  <script>
+  !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+  n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+  document,'script','https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', 'XXXXXXXXXXXXXXX');
+  fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=XXXXXXXXXXXXXXX&ev=PageView&noscript=1"/></noscript>
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="site-header" role="banner">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo" aria-label="Jollygood Companions — Home">
+        <img src="images/logo-white.png" alt="Jollygood Companions" class="nav-logo-img" />
+      </a>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="team.html">Team</a>
+        <a href="testimonials.html">Testimonials</a>
+        <a href="https://www.jollygoodhomes.com" target="_blank" rel="noopener">JollyGood Homes</a>
+        <a href="partners.html">Partners</a>
+        <a href="contact.html" class="nav-cta active">Contact</a>
+      </nav>
+      <button class="nav-hamburger" id="nav-hamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+  <nav class="nav-mobile" id="nav-mobile" aria-label="Mobile navigation">
+    <a href="index.html">Home</a>
+    <a href="services.html">Services</a>
+    <a href="team.html">Team</a>
+    <a href="testimonials.html">Testimonials</a>
+    <a href="https://www.jollygoodhomes.com" target="_blank" rel="noopener">JollyGood Homes ↗</a>
+    <a href="partners.html">Partners</a>
+    <a href="contact.html" class="active">Contact</a>
+  </nav>
+
+  <main id="main-content">
+
+    <!-- PAGE HERO -->
+    <section class="page-hero" aria-label="Page header">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="index.html">Home</a>
+          <span class="sep" aria-hidden="true">›</span>
+          <span aria-current="page">Contact</span>
+        </nav>
+        <h1>We'll Help You Find the Right Support</h1>
+        <p>Reach out by phone or email — we're happy to answer any questions about companion care.</p>
+      </div>
+    </section>
+
+    <!-- CONTACT CONTENT -->
+    <section class="section" aria-labelledby="contact-heading">
+      <div class="container">
+        <div class="contact-layout">
+
+          <!-- Sidebar: Direct Contact -->
+          <div class="fade-in">
+            <h2 id="contact-heading">Jollygood Companion Services</h2>
+            <p>We'd love to hear from you. Call, email, or send a message — we'll respond promptly.</p>
+
+            <div class="contact-detail-list">
+              <div class="contact-detail-item">
+                <div class="contact-detail-icon" aria-hidden="true"></div>
+                <div class="contact-detail-body">
+                  <h4>Phone</h4>
+                  <a href="tel:9136087373">(913) 608-7373</a>
+                </div>
+              </div>
+              <div class="contact-detail-item">
+                <div class="contact-detail-icon" aria-hidden="true"></div>
+                <div class="contact-detail-body">
+                  <h4>Email</h4>
+                  <a href="mailto:angelsalcedo@jollygoodcompanions.com">angelsalcedo@jollygoodcompanions.com</a>
+                </div>
+              </div>
+              <div class="contact-detail-item">
+                <div class="contact-detail-icon" aria-hidden="true"></div>
+                <div class="contact-detail-body">
+                  <h4>Service Area</h4>
+                  <p>Kansas City Metro Area</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="availability-strip" role="complementary" aria-label="Availability info">
+              <div>
+                <h4>Flexible Hours</h4>
+                <p>We offer daily, overnight, and 24/7 care options. Contact us any time to discuss your scheduling needs.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Form Card -->
+          <div class="contact-form-card fade-in">
+            <h2>Send Us a Message</h2>
+            <p>Fill out the form below and we'll get back to you as soon as possible.</p>
+
+            <!--
+              Web3Forms — free contact form service (250 submissions/month).
+              SETUP: Visit https://web3forms.com, enter Angel's email, and
+              paste the API key they send into the access_key input below.
+            -->
+            <form
+              action="https://api.web3forms.com/submit"
+              method="POST"
+              aria-label="Contact form"
+              id="contact-form"
+            >
+              <!-- Web3Forms: paste your API key below (from web3forms.com) -->
+              <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_KEY" />
+              <!-- Email subject line Angel will see in his inbox -->
+              <input type="hidden" name="subject" value="New message from Jollygood Companions website" />
+              <!-- Redirects to branded thank-you page — required for GA4 / Meta conversion tracking -->
+              <input type="hidden" name="redirect" value="https://jollygoodcompanions.com/thank-you.html" />
+              <!-- Honeypot spam protection — must stay hidden -->
+              <input type="checkbox" name="botcheck" style="display:none;" tabindex="-1" aria-hidden="true" />
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label" for="contact-name">Full Name <span aria-hidden="true" style="color:var(--color-accent);">*</span></label>
+                  <input
+                    class="form-control"
+                    type="text"
+                    id="contact-name"
+                    name="Name"
+                    placeholder="Jane Smith"
+                    required
+                    autocomplete="name"
+                  />
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="contact-phone">Phone Number</label>
+                  <input
+                    class="form-control"
+                    type="tel"
+                    id="contact-phone"
+                    name="Phone"
+                    placeholder="(913) 555-0000"
+                    autocomplete="tel"
+                  />
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="contact-email">Email Address <span aria-hidden="true" style="color:var(--color-accent);">*</span></label>
+                <input
+                  class="form-control"
+                  type="email"
+                  id="contact-email"
+                  name="Email"
+                  placeholder="you@example.com"
+                  required
+                  autocomplete="email"
+                />
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="contact-subject">How Can We Help?</label>
+                <select class="form-control" id="contact-subject" name="Subject">
+                  <option value="">Select a topic…</option>
+                  <option value="General Inquiry">General Inquiry</option>
+                  <option value="Starting Care Services">Starting Care Services</option>
+                  <option value="Services Question">Services Question</option>
+                  <option value="Pricing">Pricing &amp; Availability</option>
+                  <option value="Respite Care">Respite Care for Family</option>
+                  <option value="Join the Team">Join Our Team</option>
+                  <option value="Partnership">Partnership Inquiry</option>
+                  <option value="Other">Other</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="contact-message">Message <span aria-hidden="true" style="color:var(--color-accent);">*</span></label>
+                <textarea
+                  class="form-control"
+                  id="contact-message"
+                  name="Message"
+                  placeholder="Tell us about your situation and how we can help…"
+                  required
+                  rows="5"
+                ></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-lg" style="width:100%;">
+                Send Message 
+              </button>
+
+              <p class="form-note">
+                By submitting this form, you agree to our <a href="privacy-policy.html">Privacy Policy</a>. We will never share your information with third parties.
+                <br><br>
+                <strong>Prefer to call?</strong> Reach us directly at <a href="tel:9136087373">(913) 608-7373</a>.
+              </p>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="footer-logo" aria-label="Jollygood Companions — Home">
+            <img src="images/logo-white.png" alt="Jollygood Companions" class="footer-logo-img" />
+          </a>
+          <p>Compassionate, non-medical companion care for seniors and individuals in the Kansas City metro area.</p>
+          <ul class="footer-contact-list" aria-label="Contact information">
+            <li><span aria-hidden="true"></span><a href="tel:9136087373">(913) 608-7373</a></li>
+            <li><span aria-hidden="true"></span><a href="mailto:angelsalcedo@jollygoodcompanions.com">angelsalcedo@jollygoodcompanions.com</a></li>
+            <li><span aria-hidden="true"></span><span style="color:var(--color-footer-text);">Kansas City Metro Area</span></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul class="footer-nav-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="team.html">Team</a></li>
+            <li><a href="testimonials.html">Testimonials</a></li>
+            <li><a href="partners.html">Partners</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>More</h4>
+          <ul class="footer-nav-list">
+            <li><a href="privacy-policy.html">Privacy Policy</a></li>
+            <li><a href="https://www.jollygoodhomes.com" target="_blank" rel="noopener">JollyGood Homes ↗</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 Jollygood Companion Services. All Rights Reserved.</p>
+        <a href="privacy-policy.html">Privacy Policy</a>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" id="back-to-top" aria-label="Back to top">↑</button>
+  <script src="js/main.js"></script>
+</body>
+</html>

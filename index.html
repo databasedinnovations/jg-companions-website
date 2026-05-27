@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jollygood Companions — Compassionate Companion Care in Kansas City</title>
+  <meta name="description" content="Jollygood Companions provides compassionate, non-medical companion care services for seniors and individuals in Kansas City. Personal care, companionship, homemaking, transportation, and more." />
+
+  <!-- Favicon -->
+  <link rel="icon" href="images/icon.png" type="image/png" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <!-- Global CSS -->
+  <link rel="stylesheet" href="css/global.css" />
+
+  <style>
+    /* ---- Homepage-specific styles ---- */
+
+    /* Hero */
+    .home-hero {
+      position: relative;
+      min-height: 92vh;
+      display: flex;
+      align-items: center;
+      background: linear-gradient(155deg, #0d1f2d 0%, #25435D 50%, #1e3a50 100%);
+      overflow: hidden;
+    }
+
+    .home-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M50 50c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10c0 5.523-4.477 10-10 10s-10-4.477-10-10 4.477-10 10-10zM10 10c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10c0 5.523-4.477 10-10 10S0 25.523 0 20s4.477-10 10-10z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+
+    /* Floating decorative blob */
+    .home-hero::after {
+      content: '';
+      position: absolute;
+      top: -20%;
+      right: -10%;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(237,204,102,0.15) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 680px;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(237,204,102,0.20);
+      border: 1px solid rgba(237,204,102,0.45);
+      color: #EDCC66;
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 0.35rem 1rem;
+      border-radius: 9999px;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-content h1 {
+      font-size: clamp(2.2rem, 5.5vw, 3.5rem);
+      color: #fff;
+      font-weight: 800;
+      line-height: 1.15;
+      margin-bottom: 1.25rem;
+    }
+
+    .hero-content h1 em {
+      font-style: normal;
+      color: #EDCC66;
+    }
+
+    .hero-content p {
+      font-size: 1.15rem;
+      color: rgba(255,255,255,0.82);
+      line-height: 1.7;
+      margin-bottom: 2.25rem;
+      max-width: 540px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      align-items: center;
+    }
+
+    .hero-phone-link {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: rgba(255,255,255,0.7);
+      font-size: 0.9rem;
+    }
+
+    .hero-phone-link a {
+      color: #fff;
+      font-weight: 600;
+    }
+
+    .hero-phone-link a:hover { color: #EDCC66; }
+
+    .hero-scroll-hint {
+      position: absolute;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.4rem;
+      color: rgba(255,255,255,0.4);
+      font-size: 0.75rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .hero-scroll-hint .arrow {
+      width: 24px;
+      height: 24px;
+      border-right: 2px solid rgba(255,255,255,0.3);
+      border-bottom: 2px solid rgba(255,255,255,0.3);
+      transform: rotate(45deg);
+      animation: bounce 2s infinite;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: rotate(45deg) translateY(0); }
+      50% { transform: rotate(45deg) translateY(5px); }
+    }
+
+    /* Services section */
+    .home-services { background: var(--color-bg); }
+
+    /* Gallery */
+    .home-gallery { background: var(--color-surface-alt); }
+
+    /* Why choose */
+    .why-choose-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .why-choose-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+      margin-top: 1.5rem;
+    }
+
+    .why-item {
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+    }
+
+    .why-icon {
+      width: 44px;
+      height: 44px;
+      background: var(--color-primary-light);
+      color: var(--color-primary);
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      flex-shrink: 0;
+    }
+
+    .why-text h4 {
+      font-size: 1rem;
+      margin-bottom: 0.2rem;
+      color: var(--color-text-dark);
+    }
+
+    .why-text p {
+      font-size: 0.9rem;
+      color: var(--color-text-muted);
+      margin: 0;
+    }
+
+    .why-visual {
+      background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-mid) 100%);
+      border-radius: var(--radius-lg);
+      min-height: 380px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 1rem;
+      padding: 2.5rem;
+      text-align: center;
+      color: #fff;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .why-visual .why-stat {
+      font-family: var(--font-heading);
+      font-size: 3.5rem;
+      font-weight: 800;
+      color: var(--color-accent);
+      line-height: 1;
+    }
+
+    .why-visual .why-stat-label {
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.75);
+      margin-top: -0.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .why-visual .divider-light {
+      width: 40px;
+      height: 2px;
+      background: rgba(255,255,255,0.3);
+      margin: 0 auto;
+    }
+
+    .why-visual .phone-big {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #fff;
+      margin-top: 1rem;
+    }
+
+    .why-visual .phone-label {
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.6);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    /* Testimonials */
+    .home-testimonials { background: var(--color-surface-alt); }
+
+    /* Fade-in animation */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+    .fade-in.in-view {
+      opacity: 1;
+      transform: none;
+    }
+
+    @media (max-width: 768px) {
+      .home-hero { min-height: 100svh; }
+      .why-choose-grid { grid-template-columns: 1fr; }
+      .why-visual { min-height: auto; }
+    }
+  </style>
+
+  <!-- Structured Data — helps Google understand the business for local search -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Jollygood Companion Services",
+    "description": "Compassionate, non-medical companion care for seniors and individuals in the Kansas City metro area.",
+    "url": "https://jollygoodcompanions.com",
+    "logo": "https://jollygoodcompanions.com/images/icon.png",
+    "image": "https://jollygoodcompanions.com/images/icon.png",
+    "telephone": "+1-913-608-7373",
+    "email": "angelsalcedo@jollygoodcompanions.com",
+    "areaServed": {
+      "@type": "GeoCircle",
+      "geoMidpoint": {
+        "@type": "GeoCoordinates",
+        "latitude": 39.0997,
+        "longitude": -94.5786
+      },
+      "geoRadius": "80467"
+    },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+        "opens": "08:00",
+        "closes": "17:00"
+      }
+    ],
+    "priceRange": "$$",
+    "knowsAbout": [
+      "Companion Care",
+      "Senior Care",
+      "Non-Medical Home Care",
+      "Respite Care",
+      "Dementia Companionship",
+      "Overnight Care"
+    ]
+  }
+  </script>
+
+  <!-- =====================================================================
+       ANALYTICS — Replace placeholder IDs before going live
+       ===================================================================== -->
+
+  <!-- Google Analytics 4 — replace G-XXXXXXXXXX (twice) with your Measurement ID
+       Get it at: analytics.google.com → Admin → Data Streams → your web stream -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+
+  <!-- Meta Pixel — replace XXXXXXXXXXXXXXX (twice) with your Pixel ID
+       Get it at: business.facebook.com → Events Manager → Pixels → Create -->
+  <script>
+  !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+  n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+  document,'script','https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', 'XXXXXXXXXXXXXXX');
+  fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=XXXXXXXXXXXXXXX&ev=PageView&noscript=1"/></noscript>
+</head>
+
+<body>
+
+  <!-- =====================================================================
+       NAVIGATION
+       ===================================================================== -->
+  <header class="site-header" role="banner">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo" aria-label="Jollygood Companions — Home">
+        <img src="images/logo-white.png" alt="Jollygood Companions" class="nav-logo-img" />
+      </a>
+
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="index.html" class="active">Home</a>
+        <a href="services.html">Services</a>
+        <a href="team.html">Team</a>
+        <a href="testimonials.html">Testimonials</a>
+        <a href="https://www.jollygoodhomes.com" target="_blank" rel="noopener">JollyGood Homes</a>
+        <a href="partners.html">Partners</a>
+        <a href="contact.html" class="nav-cta">Contact</a>
+      </nav>
+
+      <button class="nav-hamburger" id="nav-hamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Nav -->
+  <nav class="nav-mobile" id="nav-mobile" aria-label="Mobile navigation">
+    <a href="index.html" class="active">Home</a>
+    <a href="services.html">Services</a>
+    <a href="team.html">Team</a>
+    <a href="testimonials.html">Testimonials</a>
+    <a href="https://www.jollygoodhomes.com" target="_blank" rel="noopener">JollyGood Homes ↗</a>
+    <a href="partners.html">Partners</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <main id="main-content">
+
+    <!-- ===================================================================
+         HERO
+         =================================================================== -->
+    <section class="home-hero" aria-label="Hero">
+      <div class="container">
+        <div class="hero-content">
+          <div class="hero-badge">
+            <span></span> Kansas City's Trusted Companion Care
+          </div>
+          <h1>Compassionate Companion Care<br>in <em>Kansas City</em></h1>
+          <p>Learn how our companions take your needs to heart. Personalized, non-medical support that helps you or your loved one live with independence and dignity.</p>
+          <div class="hero-actions">
+            <a href="tel:9136087373" class="btn btn-phone btn-lg">
+               Call Now — (913) 608-7373
+            </a>
+            <a href="services.html" class="btn btn-outline-white btn-lg">
+              Explore Our Services
+            </a>
+          </div>
+          <div class="hero-phone-link" style="margin-top:1.5rem;">
+            <span>Questions? Email us:</span>
+            <a href="mailto:angelsalcedo@jollygoodcompanions.com">angelsalcedo@jollygoodcompanions.com</a>
+          </div>
+        </div>
+      </div>
+      <div class="hero-scroll-hint" aria-hidden="true">
+        <span>Scroll</span>
+        <div class="arrow"></div>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         SERVICES OVERVIEW
+         =================================================================== -->
+    <section class="section home-services" aria-labelledby="services-heading">
+      <div class="container">
+        <div class="text-center section-title-block center fade-in">
+          <span class="section-label">What We Offer</span>
+          <h2 id="services-heading" class="section-title">Our Care Services</h2>
+          <p class="section-subtitle">Discover the benefits of our home companions — tailored support that adapts to your schedule and needs.</p>
+        </div>
+
+        <div class="service-grid">
+          <div class="service-card fade-in">
+            <h3>Personal Care Assistance</h3>
+            <p>Support with bathing, dressing, grooming, hair &amp; skin care, toileting, mobility assistance, oral hygiene, and meal setup.</p>
+          </div>
+          <div class="service-card fade-in">
+            <h3>Companionship &amp; Social Engagement</h3>
+            <p>Conversation, social outings, games, entertainment, hobby encouragement, and emotional wellness support.</p>
+          </div>
+          <div class="service-card fade-in">
+            <h3>Homemaking &amp; Household Support</h3>
+            <p>Laundry, vacuuming, dusting, dishwashing, organization, trash removal, mail collection, and light pet &amp; plant care.</p>
+          </div>
+          <div class="service-card fade-in">
+            <h3>Meal Planning &amp; Preparation</h3>
+            <p>Daily meal prep, grocery shopping, hydration reminders, post-meal cleanup, and special diet accommodation.</p>
+          </div>
+          <div class="service-card fade-in">
+            <h3>Errands &amp; Transportation</h3>
+            <p>Non-medical rides to doctor appointments, grocery runs, pharmacy visits, salons, and post office errands.</p>
+          </div>
+          <div class="service-card fade-in">
+            <h3>Medication Reminders</h3>
+            <p>Verbal reminders and pill box organization assistance. We do not dispense or administer medications.</p>
+          </div>
+          <div class="service-card fade-in">
+            <h3>Respite Care for Family Caregivers</h3>
+            <p>Daily or overnight care with flexible scheduling, providing temporary or continuous relief for family caregivers.</p>
+          </div>
+          <div class="service-card fade-in">
+            <h3>Specialized Non-Medical Support</h3>
+            <p>Dementia &amp; Alzheimer's companionship, hospice partnership end-of-life support, and post-hospital discharge assistance.</p>
+          </div>
+          <div class="service-card fade-in">
+            <h3>Flexible Scheduling</h3>
+            <p>Daily, overnight, and 24/7 care options available with flexible care plans — and no long-term contracts required.</p>
+          </div>
+        </div>
+
+        <div class="text-center" style="margin-top:2.5rem;">
+          <a href="services.html" class="btn btn-primary btn-lg">View All Services</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         CARE IN ACTION GALLERY
+         =================================================================== -->
+    <section class="section home-gallery section-alt" aria-labelledby="gallery-heading">
+      <div class="container">
+        <div class="text-center section-title-block center fade-in">
+          <span class="section-label">Our Companions at Work</span>
+          <h2 id="gallery-heading" class="section-title">Our Care in Action</h2>
+          <p class="section-subtitle">Every day, our companions bring warmth, support, and genuine care to the people we serve.</p>
+        </div>
+
+        <div class="gallery-grid">
+          <div class="gallery-item fade-in">
+            <div class="gallery-item-inner" aria-hidden="true"></div>
+            <div class="gallery-caption">Providing compassionate daily support</div>
+          </div>
+          <div class="gallery-item fade-in">
+            <div class="gallery-item-inner" aria-hidden="true"></div>
+            <div class="gallery-caption">Building meaningful connections</div>
+          </div>
+          <div class="gallery-item fade-in">
+            <div class="gallery-item-inner" aria-hidden="true"></div>
+            <div class="gallery-caption">Care with dignity and respect</div>
+          </div>
+          <div class="gallery-item fade-in">
+            <div class="gallery-item-inner" aria-hidden="true"></div>
+            <div class="gallery-caption">Here to help with daily needs</div>
+          </div>
+          <div class="gallery-item fade-in">
+            <div class="gallery-item-inner" aria-hidden="true"></div>
+            <div class="gallery-caption">Professional and caring service</div>
+          </div>
+          <div class="gallery-item fade-in">
+            <div class="gallery-item-inner" aria-hidden="true"></div>
+            <div class="gallery-caption">Trusted like family</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         WHY CHOOSE JOLLYGOOD
+         =================================================================== -->
+    <section class="section" aria-labelledby="why-heading">
+      <div class="container">
+        <div class="why-choose-grid">
+          <div class="fade-in">
+            <span class="section-label">Why Choose Us</span>
+            <h2 id="why-heading" class="section-title">Care You Can Truly Trust</h2>
+            <p>We believe every person deserves support that respects their independence, honors their dignity, and fits their unique lifestyle.</p>
+            <div class="why-choose-list">
+              <div class="why-item">
+                <div class="why-icon" aria-hidden="true"></div>
+                <div class="why-text">
+                  <h4>Personalized Care Plans</h4>
+                  <p>Every care plan is tailored to your specific needs — no one-size-fits-all approach.</p>
+                </div>
+              </div>
+              <div class="why-item">
+                <div class="why-icon" aria-hidden="true"></div>
+                <div class="why-text">
+                  <h4>Carefully Selected &amp; Trained Companions</h4>
+                  <p>Each companion is vetted, background-checked, and trained to provide compassionate support.</p>
+                </div>
+              </div>
+              <div class="why-item">
+                <div class="why-icon" aria-hidden="true"></div>
+                <div class="why-text">
+                  <h4>No Long-Term Contracts</h4>
+                  <p>Flexible care on your schedule — daily, weekly, or 24/7. Cancel anytime.</p>
+                </div>
+              </div>
+              <div class="why-item">
+                <div class="why-icon" aria-hidden="true"></div>
+                <div class="why-text">
+                  <h4>Dignity &amp; Compassion First</h4>
+                  <p>We treat every client with the same care and respect we'd want for our own family.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="why-visual fade-in" aria-label="Contact us today">
+            <div>
+              <div class="why-stat">5★</div>
+              <p class="why-stat-label">Client-Rated Service</p>
+            </div>
+            <div class="divider-light"></div>
+            <div style="margin-top:1.5rem;">
+              <p class="phone-label">Call Us Directly</p>
+              <div class="phone-big">
+                <a href="tel:9136087373" style="color:var(--color-accent); text-decoration:none;">(913) 608-7373</a>
+              </div>
+            </div>
+            <div style="margin-top:1.5rem;">
+              <a href="contact.html" class="btn btn-outline-white">Get in Touch</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         TESTIMONIALS
+         =================================================================== -->
+    <section class="section home-testimonials" aria-labelledby="testimonials-heading">
+      <div class="container">
+        <div class="text-center section-title-block center fade-in">
+          <span class="section-label">Client Feedback</span>
+          <h2 id="testimonials-heading" class="section-title">What Our Clients Say</h2>
+          <p class="section-subtitle">Real stories from real families — because the best measure of our care is the people we serve.</p>
+        </div>
+
+        <div class="testimonial-grid">
+          <div class="testimonial-card fade-in">
+            <span class="stars" aria-label="5 stars">★★★★★</span>
+            <span class="quote-mark" aria-hidden="true">"</span>
+            <blockquote>"Angel has taken wonderful care of me during my times of need and I recommend him to all of my friends!"</blockquote>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar" aria-hidden="true">B</div>
+              <div>
+                <span class="testimonial-name">Betty</span>
+                <span class="testimonial-detail">Client, Age 83</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card fade-in">
+            <span class="stars" aria-label="5 stars">★★★★★</span>
+            <span class="quote-mark" aria-hidden="true">"</span>
+            <blockquote>"After trying many different companies, I finally found a home companion that I love thanks to Jollygood."</blockquote>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar" aria-hidden="true">L</div>
+              <div>
+                <span class="testimonial-name">Linda</span>
+                <span class="testimonial-detail">Client, Age 68</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card fade-in">
+            <span class="stars" aria-label="5 stars">★★★★★</span>
+            <span class="quote-mark" aria-hidden="true">"</span>
+            <blockquote>"Angel really cares about every one of his clients and I have been completely satisfied with the home care workers at Jollygood."</blockquote>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar" aria-hidden="true">D</div>
+              <div>
+                <span class="testimonial-name">Darrius</span>
+                <span class="testimonial-detail">Client, Age 57</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card fade-in">
+            <span class="stars" aria-label="5 stars">★★★★★</span>
+            <span class="quote-mark" aria-hidden="true">"</span>
+            <blockquote>"I trust Angel and his team like family!"</blockquote>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar" aria-hidden="true">J</div>
+              <div>
+                <span class="testimonial-name">Josefina</span>
+                <span class="testimonial-detail">Client, Age 62</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center" style="margin-top:2.5rem;">
+          <a href="testimonials.html" class="btn btn-outline">Read All Reviews</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         CTA STRIP
+         =================================================================== -->
+    <section class="cta-strip" aria-label="Contact call-to-action">
+      <div class="container">
+        <span class="section-label" style="color:var(--color-accent);">Ready to Get Started?</span>
+        <h2>Talk with someone who cares</h2>
+        <p>Whether you have questions or are ready to begin, we're here to help you find the right support for your situation.</p>
+        <div class="btn-group">
+          <a href="tel:9136087373" class="btn btn-phone btn-lg">(913) 608-7373</a>
+          <a href="contact.html" class="btn btn-outline-white btn-lg">Send a Message</a>
+        </div>
+        <div style="margin-top:1.5rem;">
+          <div class="contact-info-block">
+            <div class="contact-info-item">
+              <a href="mailto:angelsalcedo@jollygoodcompanions.com">angelsalcedo@jollygoodcompanions.com</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- =====================================================================
+       FOOTER
+       ===================================================================== -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="footer-logo" aria-label="Jollygood Companions — Home">
+            <img src="images/logo-white.png" alt="Jollygood Companions" class="footer-logo-img" />
+          </a>
+          <p>Compassionate, non-medical companion care for seniors and individuals in the Kansas City metro area. Personalized care that respects your independence and dignity.</p>
+          <ul class="footer-contact-list" aria-label="Contact information">
+            <li>
+                            <a href="tel:9136087373">(913) 608-7373</a>
+            </li>
+            <li>
+                            <a href="mailto:angelsalcedo@jollygoodcompanions.com">angelsalcedo@jollygoodcompanions.com</a>
+            </li>
+            <li>
+                            <span style="color:var(--color-footer-text);">Kansas City Metro Area</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul class="footer-nav-list" aria-label="Site pages">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="team.html">Team</a></li>
+            <li><a href="testimonials.html">Testimonials</a></li>
+            <li><a href="partners.html">Partners</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>More</h4>
+          <ul class="footer-nav-list">
+            <li><a href="privacy-policy.html">Privacy Policy</a></li>
+            <li><a href="https://www.jollygoodhomes.com" target="_blank" rel="noopener">JollyGood Homes ↗</a></li>
+          </ul>
+          <div style="margin-top:1.5rem;">
+            <p style="color:rgba(255,255,255,0.35); font-size:0.8rem; margin-bottom:0.75rem;">Hours</p>
+            <p style="color:var(--color-footer-text); font-size:0.85rem; margin:0;">Available daily — flexible hours to meet your needs.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2025 Jollygood Companion Services. All Rights Reserved.</p>
+        <a href="privacy-policy.html">Privacy Policy</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top -->
+  <button class="back-to-top" id="back-to-top" aria-label="Back to top">↑</button>
+
+  <!-- Main JS -->
+  <script src="js/main.js"></script>
+</body>
+</html>

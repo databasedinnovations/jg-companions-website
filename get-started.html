@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Get Companion Care in Kansas City — Jollygood Companions</title>
+  <meta name="description" content="Request a free companion care consultation for a loved one in Kansas City. Compassionate, non-medical care with no long-term contracts. Call (913) 608-7373." />
+  <!-- noindex: this is a paid ad landing page, not meant for organic search -->
+  <meta name="robots" content="noindex, nofollow" />
+
+  <link rel="icon" href="images/icon.png" type="image/png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/global.css" />
+
+  <style>
+    /* ==========================================================================
+       Landing Page — Stripped navigation, single-goal conversion layout
+       ========================================================================== */
+
+    /* Minimal sticky header */
+    .lp-header {
+      background: var(--color-primary-dark);
+      padding: 0.85rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.35);
+    }
+
+    .lp-header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .lp-logo-img {
+      height: 50px;
+      width: auto;
+      display: block;
+    }
+
+    .lp-header-right {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 0.1rem;
+    }
+
+    .lp-call-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: var(--color-accent);
+      color: var(--color-primary-dark);
+      font-weight: 700;
+      font-size: 1rem;
+      padding: 0.55rem 1.35rem;
+      border-radius: 9999px;
+      text-decoration: none;
+      transition: background var(--transition);
+      white-space: nowrap;
+    }
+
+    .lp-call-btn:hover {
+      background: var(--color-accent-hover);
+      color: var(--color-primary-dark);
+    }
+
+    .lp-header-hours {
+      font-size: 0.72rem;
+      color: rgba(255,255,255,0.45);
+      text-align: right;
+    }
+
+    /* Hero section */
+    .lp-hero {
+      background: linear-gradient(155deg, #0d1f2d 0%, #25435D 55%, #1e3a50 100%);
+      padding: 4.5rem 0 5rem;
+    }
+
+    .lp-hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.1fr;
+      gap: 3.5rem;
+      align-items: start;
+    }
+
+    /* Hero left — headline */
+    .lp-headline {
+      padding-top: 0.75rem;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(237,204,102,0.18);
+      border: 1px solid rgba(237,204,102,0.40);
+      color: #EDCC66;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 0.35rem 1rem;
+      border-radius: 9999px;
+      margin-bottom: 1.4rem;
+    }
+
+    .lp-headline h1 {
+      font-size: clamp(1.85rem, 4vw, 2.75rem);
+      color: #fff;
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+
+    .lp-headline h1 em {
+      font-style: normal;
+      color: #EDCC66;
+    }
+
+    .lp-headline > p {
+      font-size: 1.05rem;
+      color: rgba(255,255,255,0.80);
+      line-height: 1.72;
+      margin-bottom: 1.75rem;
+      max-width: 460px;
+    }
+
+    .lp-trust-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.55rem;
+      margin-bottom: 2rem;
+    }
+
+    .lp-trust-pill {
+      background: rgba(255,255,255,0.10);
+      border: 1px solid rgba(255,255,255,0.20);
+      color: rgba(255,255,255,0.85);
+      font-size: 0.78rem;
+      font-weight: 600;
+      padding: 0.28rem 0.8rem;
+      border-radius: 9999px;
+    }
+
+    .lp-trust-pill.gold {
+      background: rgba(237,204,102,0.18);
+      border-color: rgba(237,204,102,0.40);
+      color: #EDCC66;
+    }
+
+    .lp-hero-phone {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 2rem;
+    }
+
+    .lp-hero-phone a {
+      color: #fff;
+      font-size: 1.4rem;
+      font-weight: 700;
+      text-decoration: none;
+      letter-spacing: -0.01em;
+    }
+
+    .lp-hero-phone a:hover { color: #EDCC66; }
+
+    .lp-hero-phone-note {
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.45);
+      line-height: 1.4;
+    }
+
+    .lp-quote-mini {
+      background: rgba(255,255,255,0.07);
+      border-left: 3px solid var(--color-accent);
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      padding: 0.9rem 1.1rem;
+    }
+
+    .lp-quote-mini p {
+      color: rgba(255,255,255,0.82);
+      font-style: italic;
+      font-size: 0.92rem;
+      margin: 0 0 0.3rem;
+      line-height: 1.6;
+    }
+
+    .lp-quote-mini .lp-quote-credit {
+      font-size: 0.78rem;
+      color: var(--color-accent);
+      font-weight: 600;
+      font-style: normal;
+    }
+
+    /* Hero right — form card */
+    .lp-form-card {
+      background: var(--color-surface);
+      border-radius: var(--radius-lg);
+      padding: 2.5rem 2.25rem;
+      box-shadow: 0 24px 64px rgba(0,0,0,0.40);
+    }
+
+    .lp-form-card h2 {
+      font-size: 1.45rem;
+      color: var(--color-text-dark);
+      margin-bottom: 0.4rem;
+    }
+
+    .lp-form-card > p {
+      color: var(--color-text-muted);
+      font-size: 0.88rem;
+      margin-bottom: 1.6rem;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .form-note {
+      font-size: 0.78rem;
+      color: var(--color-text-muted);
+      margin-top: 0.75rem;
+      text-align: center;
+    }
+
+    .form-note a { color: var(--color-primary-mid); }
+
+    /* Stats strip */
+    .lp-stats-strip {
+      background: var(--color-primary);
+      padding: 2.5rem 0;
+    }
+
+    .lp-stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+      text-align: center;
+    }
+
+    .lp-stat-value {
+      font-family: var(--font-heading);
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: var(--color-accent);
+      line-height: 1;
+      margin-bottom: 0.4rem;
+    }
+
+    .lp-stat-label {
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.7);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      line-height: 1.4;
+    }
+
+    /* Services preview */
+    .lp-services-section { background: var(--color-bg); }
+
+    .lp-services-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+      margin-top: 2.5rem;
+    }
+
+    .lp-service-card {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border-light);
+      border-radius: var(--radius-md);
+      padding: 1.75rem 1.5rem;
+      box-shadow: var(--shadow-card);
+      text-align: center;
+      transition: all var(--transition);
+    }
+
+    .lp-service-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .lp-service-icon {
+      width: 52px;
+      height: 52px;
+      background: var(--color-primary-light);
+      border-radius: var(--radius-sm);
+      margin: 0 auto 1rem;
+    }
+
+    .lp-service-card h3 {
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+      color: var(--color-text-dark);
+      line-height: 1.35;
+    }
+
+    .lp-service-card p {
+      font-size: 0.85rem;
+      color: var(--color-text-muted);
+      margin: 0;
+      line-height: 1.6;
+    }
+
+    /* Testimonials */
+    .lp-testimonials-strip { background: var(--color-surface-alt); }
+
+    .lp-testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 2.5rem;
+    }
+
+    /* Why choose */
+    .lp-why-section { background: var(--color-bg); }
+
+    .lp-why-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem 2.5rem;
+      margin-top: 2rem;
+    }
+
+    .lp-why-item {
+      display: flex;
+      gap: 0.85rem;
+      align-items: flex-start;
+    }
+
+    .lp-why-check {
+      width: 26px;
+      height: 26px;
+      background: var(--color-primary);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--color-accent);
+      font-weight: 800;
+      font-size: 0.82rem;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .lp-why-text strong {
+      display: block;
+      font-size: 0.95rem;
+      color: var(--color-text-dark);
+      margin-bottom: 0.15rem;
+    }
+
+    .lp-why-text p {
+      font-size: 0.875rem;
+      color: var(--color-text-muted);
+      margin: 0;
+      line-height: 1.55;
+    }
+
+    /* Bottom CTA */
+    .lp-bottom-cta {
+      background: linear-gradient(135deg, #0d1f2d 0%, #25435D 100%);
+      padding: 4.5rem 0;
+      text-align: center;
+    }
+
+    .lp-bottom-cta .section-label { color: var(--color-accent); }
+
+    .lp-bottom-cta h2 {
+      color: #fff;
+      font-size: 2rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .lp-bottom-cta > .container > p {
+      color: rgba(255,255,255,0.7);
+      margin-bottom: 2rem;
+      font-size: 1rem;
+    }
+
+    .lp-bottom-cta .hours-note {
+      color: rgba(255,255,255,0.45);
+      font-size: 0.85rem;
+      margin-top: 1.1rem;
+    }
+
+    /* Minimal footer */
+    .lp-footer {
+      background: var(--color-footer-bg);
+      padding: 1.4rem 0;
+    }
+
+    .lp-footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .lp-footer p,
+    .lp-footer a {
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.35);
+      margin: 0;
+      text-decoration: none;
+    }
+
+    .lp-footer a:hover { color: rgba(255,255,255,0.65); }
+
+    .lp-footer-links { display: flex; gap: 1.5rem; }
+
+    /* Scroll animations */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+
+    .fade-in.in-view {
+      opacity: 1;
+      transform: none;
+    }
+
+    /* ---- Responsive ---- */
+    @media (max-width: 1024px) {
+      .lp-services-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 900px) {
+      .lp-hero-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
+      .lp-hero { padding: 3rem 0 4rem; }
+      .lp-headline > p { max-width: 100%; }
+      .lp-stats-grid { grid-template-columns: repeat(2, 1fr); }
+      .lp-testimonials-grid { grid-template-columns: 1fr; }
+      .lp-why-grid { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 600px) {
+      .lp-services-grid { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+      .lp-form-card { padding: 2rem 1.5rem; }
+      .lp-call-btn { font-size: 0.9rem; padding: 0.5rem 1rem; }
+    }
+  </style>
+
+  <!-- =====================================================================
+       ANALYTICS — Replace placeholder IDs before going live
+       ===================================================================== -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+  <script>
+  !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+  n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+  document,'script','https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', 'XXXXXXXXXXXXXXX');
+  fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=XXXXXXXXXXXXXXX&ev=PageView&noscript=1"/></noscript>
+</head>
+<body>
+
+  <!-- ==========================================================================
+       MINIMAL HEADER — logo + phone only, no distracting nav links
+       ========================================================================== -->
+  <header class="lp-header" role="banner">
+    <div class="container">
+      <div class="lp-header-inner">
+        <a href="index.html" aria-label="Jollygood Companions — Home">
+          <img src="images/logo-white.png" alt="Jollygood Companions" class="lp-logo-img" />
+        </a>
+        <div class="lp-header-right">
+          <a href="tel:9136087373" class="lp-call-btn">Call (913) 608-7373</a>
+          <span class="lp-header-hours">Mon–Fri, 8 AM – 5 PM · Services available 24/7</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content">
+
+    <!-- ========================================================================
+         HERO — headline left, form right
+         ======================================================================== -->
+    <section class="lp-hero" aria-label="Get started">
+      <div class="container">
+        <div class="lp-hero-grid">
+
+          <!-- Left: headline + trust + phone -->
+          <div class="lp-headline">
+            <div class="hero-badge">Kansas City's Trusted Companion Care</div>
+            <h1>Need Companion Care for a <em>Loved One?</em></h1>
+            <p>When family can't always be there, Jollygood Companions steps in — providing compassionate, non-medical care throughout the Kansas City metro. Flexible scheduling. No long-term contracts. Ready when you are.</p>
+
+            <div class="lp-trust-pills" role="list" aria-label="Key features">
+              <span class="lp-trust-pill gold" role="listitem">★★★★★ 5-Star Rated</span>
+              <span class="lp-trust-pill" role="listitem">No Long-Term Contracts</span>
+              <span class="lp-trust-pill" role="listitem">Daily &amp; Overnight Care</span>
+              <span class="lp-trust-pill" role="listitem">Kansas City Local</span>
+              <span class="lp-trust-pill" role="listitem">Background-Checked Staff</span>
+            </div>
+
+            <div class="lp-hero-phone" aria-label="Phone contact">
+              <div>
+                <a href="tel:9136087373">(913) 608-7373</a>
+                <div class="lp-hero-phone-note">Mon–Fri, 8 AM – 5 PM<br>Services available daily &amp; overnight</div>
+              </div>
+            </div>
+
+            <div class="lp-quote-mini" role="figure" aria-label="Client testimonial">
+              <p>"After trying many different companies, I finally found a home companion that I love thanks to Jollygood."</p>
+              <span class="lp-quote-credit">— Linda, Client, Age 68</span>
+            </div>
+          </div>
+
+          <!-- Right: consultation form -->
+          <div class="lp-form-card" role="region" aria-labelledby="lp-form-heading">
+            <h2 id="lp-form-heading">Request a Free Care Consultation</h2>
+            <p>Fill out the form and we'll call you back within the hour during business hours.</p>
+
+            <!--
+              Web3Forms contact form.
+              IMPORTANT: Replace YOUR_WEB3FORMS_KEY with Angel's actual key.
+              The subject "Ad Lead" helps Angel identify which leads came from paid ads.
+            -->
+            <form
+              action="https://api.web3forms.com/submit"
+              method="POST"
+              id="contact-form"
+              aria-label="Care consultation request form"
+            >
+              <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_KEY" />
+              <input type="hidden" name="subject" value="New Care Inquiry — Paid Ad Lead" />
+              <input type="hidden" name="redirect" value="https://jollygoodcompanions.com/thank-you.html" />
+              <input type="checkbox" name="botcheck" style="display:none;" tabindex="-1" aria-hidden="true" />
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label" for="lp-name">Your Name <span aria-hidden="true" style="color:var(--color-accent);">*</span></label>
+                  <input class="form-control" type="text" id="lp-name" name="Name" placeholder="Jane Smith" required autocomplete="name" />
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="lp-phone">Phone Number <span aria-hidden="true" style="color:var(--color-accent);">*</span></label>
+                  <input class="form-control" type="tel" id="lp-phone" name="Phone" placeholder="(913) 555-0000" required autocomplete="tel" />
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="lp-email">Email Address <span aria-hidden="true" style="color:var(--color-accent);">*</span></label>
+                <input class="form-control" type="email" id="lp-email" name="Email" placeholder="you@example.com" required autocomplete="email" />
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="lp-type">What kind of care are you looking for?</label>
+                <select class="form-control" id="lp-type" name="Subject">
+                  <option value="">Select one…</option>
+                  <option value="Starting Care Services">Starting Companion Care Services</option>
+                  <option value="Respite Care">Respite Care — I Need a Break</option>
+                  <option value="Overnight Care">Overnight or 24/7 Care</option>
+                  <option value="Post-Hospital Care">Post-Hospital Discharge Support</option>
+                  <option value="Dementia Companionship">Dementia / Alzheimer's Companionship</option>
+                  <option value="Transportation Errands">Transportation &amp; Errands</option>
+                  <option value="General Inquiry">Just Exploring Options</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="lp-message">Anything we should know? <span style="color:var(--color-text-muted); font-weight:400;">(optional)</span></label>
+                <textarea class="form-control" id="lp-message" name="Message" placeholder="A little about your situation, schedule, or questions…" rows="3"></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-lg" style="width:100%; font-size:1.05rem;">
+                Request Free Consultation
+              </button>
+
+              <p class="form-note">
+                Your information is private and never shared. By submitting you agree to our <a href="privacy-policy.html">Privacy Policy</a>.
+              </p>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         STATS STRIP
+         ======================================================================== -->
+    <section class="lp-stats-strip" aria-label="Key facts about Jollygood Companions">
+      <div class="container">
+        <div class="lp-stats-grid">
+          <div>
+            <div class="lp-stat-value">5★</div>
+            <div class="lp-stat-label">Client-Rated Service</div>
+          </div>
+          <div>
+            <div class="lp-stat-value">24/7</div>
+            <div class="lp-stat-label">Care Available</div>
+          </div>
+          <div>
+            <div class="lp-stat-value">0</div>
+            <div class="lp-stat-label">Long-Term Contracts Required</div>
+          </div>
+          <div>
+            <div class="lp-stat-value">KC</div>
+            <div class="lp-stat-label">Locally Owned &amp; Operated</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         SERVICES PREVIEW
+         ======================================================================== -->
+    <section class="section lp-services-section" aria-labelledby="lp-services-heading">
+      <div class="container">
+        <div class="text-center section-title-block center fade-in">
+          <span class="section-label">What We Provide</span>
+          <h2 id="lp-services-heading" class="section-title">Care That Fits Your Life</h2>
+          <p class="section-subtitle">Flexible, compassionate non-medical support — tailored to your schedule, not ours.</p>
+        </div>
+
+        <div class="lp-services-grid">
+          <div class="lp-service-card fade-in">
+            <div class="lp-service-icon" aria-hidden="true"></div>
+            <h3>Personal Care &amp; Companionship</h3>
+            <p>Daily personal care support, meaningful conversation, social outings, and emotional wellness — all in one.</p>
+          </div>
+          <div class="lp-service-card fade-in">
+            <div class="lp-service-icon" aria-hidden="true"></div>
+            <h3>Overnight &amp; 24/7 Care</h3>
+            <p>Round-the-clock care when it's needed most — including overnight, weekend, and continuous 24/7 coverage.</p>
+          </div>
+          <div class="lp-service-card fade-in">
+            <div class="lp-service-icon" aria-hidden="true"></div>
+            <h3>Respite Care for Families</h3>
+            <p>Family caregivers need rest too. We step in so you can recharge — for a few hours, overnight, or longer.</p>
+          </div>
+          <div class="lp-service-card fade-in">
+            <div class="lp-service-icon" aria-hidden="true"></div>
+            <h3>Dementia &amp; Post-Hospital Care</h3>
+            <p>Specialized non-medical companionship for dementia, Alzheimer's, and recovery after a hospital stay.</p>
+          </div>
+        </div>
+
+        <div class="text-center" style="margin-top:2.5rem;">
+          <a href="services.html" class="btn btn-outline" target="_blank" rel="noopener">View All Services</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         TESTIMONIALS
+         ======================================================================== -->
+    <section class="section lp-testimonials-strip" aria-labelledby="lp-testimonials-heading">
+      <div class="container">
+        <div class="text-center section-title-block center fade-in">
+          <span class="section-label">Real Families. Real Results.</span>
+          <h2 id="lp-testimonials-heading" class="section-title">What Kansas City Families Say</h2>
+        </div>
+
+        <div class="lp-testimonials-grid">
+          <div class="testimonial-card fade-in">
+            <span class="stars" aria-label="5 stars">★★★★★</span>
+            <span class="quote-mark" aria-hidden="true">"</span>
+            <blockquote>"Angel has taken wonderful care of me during my times of need and I recommend him to all of my friends!"</blockquote>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar" aria-hidden="true">B</div>
+              <div>
+                <span class="testimonial-name">Betty</span>
+                <span class="testimonial-detail">Client, Age 83</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card fade-in">
+            <span class="stars" aria-label="5 stars">★★★★★</span>
+            <span class="quote-mark" aria-hidden="true">"</span>
+            <blockquote>"After trying many different companies, I finally found a home companion that I love thanks to Jollygood."</blockquote>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar" aria-hidden="true">L</div>
+              <div>
+                <span class="testimonial-name">Linda</span>
+                <span class="testimonial-detail">Client, Age 68</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card fade-in">
+            <span class="stars" aria-label="5 stars">★★★★★</span>
+            <span class="quote-mark" aria-hidden="true">"</span>
+            <blockquote>"The care and attention my husband receives is outstanding. I finally have peace of mind knowing he's in good hands."</blockquote>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar" aria-hidden="true">M</div>
+              <div>
+                <span class="testimonial-name">Margaret</span>
+                <span class="testimonial-detail">Client, Age 71</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         WHY JOLLYGOOD
+         ======================================================================== -->
+    <section class="section lp-why-section" aria-labelledby="lp-why-heading">
+      <div class="container">
+        <div class="text-center section-title-block center fade-in">
+          <span class="section-label">Why Families Choose Us</span>
+          <h2 id="lp-why-heading" class="section-title">Care You Can Actually Count On</h2>
+        </div>
+
+        <div class="lp-why-grid fade-in">
+          <div class="lp-why-item">
+            <div class="lp-why-check" aria-hidden="true">✓</div>
+            <div class="lp-why-text">
+              <strong>Background-Checked Companions</strong>
+              <p>Every caregiver is vetted and selected for compassion, reliability, and professional conduct.</p>
+            </div>
+          </div>
+          <div class="lp-why-item">
+            <div class="lp-why-check" aria-hidden="true">✓</div>
+            <div class="lp-why-text">
+              <strong>No Long-Term Contracts</strong>
+              <p>Flexible care on your schedule. Start, pause, or adjust at any time — no penalties.</p>
+            </div>
+          </div>
+          <div class="lp-why-item">
+            <div class="lp-why-check" aria-hidden="true">✓</div>
+            <div class="lp-why-text">
+              <strong>Daily, Overnight, or 24/7</strong>
+              <p>We build care schedules around your needs — a few hours, overnight, or around the clock.</p>
+            </div>
+          </div>
+          <div class="lp-why-item">
+            <div class="lp-why-check" aria-hidden="true">✓</div>
+            <div class="lp-why-text">
+              <strong>Kansas City Local</strong>
+              <p>We live and work in the communities we serve — the KC metro is our home too.</p>
+            </div>
+          </div>
+          <div class="lp-why-item">
+            <div class="lp-why-check" aria-hidden="true">✓</div>
+            <div class="lp-why-text">
+              <strong>Personalized Care Plans</strong>
+              <p>No cookie-cutter packages. Every care plan is tailored to the individual and their family.</p>
+            </div>
+          </div>
+          <div class="lp-why-item">
+            <div class="lp-why-check" aria-hidden="true">✓</div>
+            <div class="lp-why-text">
+              <strong>Dignity &amp; Compassion First</strong>
+              <p>We treat every client the way we'd want our own family treated — with patience, respect, and genuine care.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         BOTTOM CTA
+         ======================================================================== -->
+    <section class="lp-bottom-cta" aria-label="Call to action">
+      <div class="container">
+        <span class="section-label">Ready to Talk?</span>
+        <h2>Call us — we're here to help</h2>
+        <p>Whether you have questions or are ready to start, a conversation takes 5 minutes and costs nothing.</p>
+        <a href="tel:9136087373" class="btn btn-phone btn-lg" style="font-size:1.2rem; padding:1rem 2.5rem;">
+          (913) 608-7373
+        </a>
+        <p class="hours-note">Mon–Fri, 8 AM – 5 PM &nbsp;|&nbsp; Services available daily &amp; overnight</p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==========================================================================
+       MINIMAL FOOTER — required for Meta ad policy (Privacy Policy link)
+       ========================================================================== -->
+  <footer class="lp-footer" role="contentinfo">
+    <div class="container">
+      <div class="lp-footer-inner">
+        <p>© 2025 Jollygood Companion Services. All Rights Reserved.</p>
+        <div class="lp-footer-links">
+          <a href="privacy-policy.html">Privacy Policy</a>
+          <a href="index.html">Full Website</a>
+          <a href="tel:9136087373">(913) 608-7373</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

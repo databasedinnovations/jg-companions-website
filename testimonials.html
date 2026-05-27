@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Client Testimonials — Jollygood Companions</title>
+  <meta name="description" content="Read what clients and families say about Jollygood Companions companion care services in Kansas City. Real reviews from real people." />
+
+  <link rel="icon" href="images/icon.png" type="image/png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/global.css" />
+
+  <style>
+    .testimonials-full-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.75rem;
+    }
+
+    .testimonial-card-lg {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border-light);
+      border-radius: var(--radius-md);
+      padding: 2.25rem;
+      box-shadow: var(--shadow-card);
+      transition: all var(--transition);
+    }
+
+    .testimonial-card-lg:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .testimonial-card-lg .quote-mark {
+      font-size: 5rem;
+      line-height: 0.8;
+      color: var(--color-accent);
+      font-family: Georgia, serif;
+      font-weight: 900;
+      opacity: 0.25;
+      display: block;
+      margin-bottom: 0.25rem;
+    }
+
+    .testimonial-card-lg blockquote {
+      font-size: 1.05rem;
+      line-height: 1.75;
+      color: var(--color-text-body);
+      font-style: italic;
+      margin: 0 0 1.5rem;
+    }
+
+    .testimonial-card-lg .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding-top: 1.25rem;
+      border-top: 1px solid var(--color-border-light);
+    }
+
+    /* Featured testimonial — full width */
+    .testimonial-card-featured {
+      background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-mid) 100%);
+      border-radius: var(--radius-md);
+      padding: 2.75rem;
+      color: #fff;
+      grid-column: 1 / -1;
+    }
+
+    .testimonial-card-featured .quote-mark {
+      color: rgba(237,204,102,0.65);
+    }
+
+    .testimonial-card-featured blockquote {
+      color: rgba(255,255,255,0.92);
+      font-size: 1.2rem;
+    }
+
+    .testimonial-card-featured .testimonial-name {
+      color: #fff;
+    }
+
+    .testimonial-card-featured .testimonial-detail {
+      color: rgba(255,255,255,0.65);
+    }
+
+    .testimonial-card-featured .testimonial-avatar {
+      background: rgba(255,255,255,0.2);
+      color: #fff;
+    }
+
+    .testimonial-card-featured .testimonial-author {
+      border-top-color: rgba(255,255,255,0.2);
+    }
+
+    .testimonial-card-featured .stars {
+      color: var(--color-accent);
+    }
+
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+    .fade-in.in-view {
+      opacity: 1;
+      transform: none;
+    }
+
+    @media (max-width: 768px) {
+      .testimonials-full-grid {
+        grid-template-columns: 1fr;
+      }
+      .testimonial-card-featured {
+        grid-column: auto;
+      }
+    }
+  </style>
+
+  <!-- =====================================================================
+       ANALYTICS — Replace placeholder IDs before going live
+       ===================================================================== -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+  <script>
+  !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+  n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+  document,'script','https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', 'XXXXXXXXXXXXXXX');
+  fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=XXXXXXXXXXXXXXX&ev=PageView&noscript=1"/></noscript>
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="site-header" role="banner">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo" aria-label="Jollygood Companions — Home">
+        <img src="images/logo-white.png" alt="Jollygood Companions" class="nav-logo-img" />
+      </a>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="team.html">Team</a>
+        <a href="testimonials.html" class="active">Testimonials</a>
+        <a href="https://www.jollygoodhomes.com" target="_blank" rel="noopener">JollyGood Homes</a>
+        <a href="partners.html">Partners</a>
+        <a href="contact.html" class="nav-cta">Contact</a>
+      </nav>
+      <button class="nav-hamburger" id="nav-hamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+  <nav class="nav-mobile" id="nav-mobile" aria-label="Mobile navigation">
+    <a href="index.html">Home</a>
+    <a href="services.html">Services</a>
+    <a href="team.html">Team</a>
+    <a href="testimonials.html" class="active">Testimonials</a>
+    <a href="https://www.jollygoodhomes.com" target="_blank" rel="noopener">JollyGood Homes ↗</a>
+    <a href="partners.html">Partners</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <main id="main-content">
+
+    <!-- PAGE HERO -->
+    <section class="page-hero" aria-label="Page header">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="index.html">Home</a>
+          <span class="sep" aria-hidden="true">›</span>
+          <span aria-current="page">Testimonials</span>
+        </nav>
+        <h1>What Our Clients Say</h1>
+        <p>Real stories from real families. The best measure of our care is the people we serve.</p>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="section" aria-labelledby="testimonials-heading">
+      <div class="container">
+        <div class="text-center section-title-block center fade-in" style="margin-bottom:3rem;">
+          <span class="section-label">Client Reviews</span>
+          <h2 id="testimonials-heading" class="section-title">Read What Our Clients Have to Say!</h2>
+          <p class="section-subtitle">We're proud of the relationships we build. Here's what clients and their families share about working with Jollygood Companions.</p>
+        </div>
+
+        <div class="testimonials-full-grid" role="list">
+
+          <!-- Featured -->
+          <div class="testimonial-card-featured testimonial-card-lg fade-in" role="listitem">
+            <span class="stars" aria-label="5 stars">★★★★★</span>
+            <span class="quote-mark" aria-hidden="true">"</span>
+            <blockquote>"Angel really cares about every one of his clients and I have been completely satisfied with the home care workers at Jollygood."</blockquote>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar" aria-hidden="true">D</div>
+              <div>
+                <span class="testimonial-name">Darrius</span>
+                <span class="testimonial-detail">Client, Age 57</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Betty -->
+          <div class="testimonial-card-lg fade-in" role="listitem">
+            <span class="stars" aria-label="5 stars">★★★★★</span>
+            <span class="quote-mark" aria-hidden="true">"</span>
+            <blockquote>"Angel has taken wonderful care of me during my times of need and I recommend him to all of my friends!"</blockquote>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar" aria-hidden="true">B</div>
+              <div>
+                <span class="testimonial-name">Betty</span>
+                <span class="testimonial-detail">Client, Age 83</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Linda -->
+          <div class="testimonial-card-lg fade-in" role="listitem">
+            <span class="stars" aria-label="5 stars">★★★★★</span>
+            <span class="quote-mark" aria-hidden="true">"</span>
+            <blockquote>"After trying many different companies, I finally found a home companion that I love thanks to Jollygood."</blockquote>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar" aria-hidden="true">L</div>
+              <div>
+                <span class="testimonial-name">Linda</span>
+                <span class="testimonial-detail">Client, Age 68</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Josefina -->
+          <div class="testimonial-card-lg fade-in" role="listitem">
+            <span class="stars" aria-label="5 stars">★★★★★</span>
+            <span class="quote-mark" aria-hidden="true">"</span>
+            <blockquote>"I trust Angel and his team like family!"</blockquote>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar" aria-hidden="true">J</div>
+              <div>
+                <span class="testimonial-name">Josefina</span>
+                <span class="testimonial-detail">Client, Age 62</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Robert -->
+          <div class="testimonial-card-lg fade-in" role="listitem">
+            <span class="stars" aria-label="5 stars">★★★★★</span>
+            <span class="quote-mark" aria-hidden="true">"</span>
+            <blockquote>"My mother is so much happier since we started with Jollygood. The companionship has made a world of difference in her daily life."</blockquote>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar" aria-hidden="true">R</div>
+              <div>
+                <span class="testimonial-name">Robert</span>
+                <span class="testimonial-detail">Family Member</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Margaret -->
+          <div class="testimonial-card-lg fade-in" role="listitem">
+            <span class="stars" aria-label="5 stars">★★★★★</span>
+            <span class="quote-mark" aria-hidden="true">"</span>
+            <blockquote>"The care and attention my husband receives is outstanding. I finally have peace of mind knowing he's in good hands while I'm at work."</blockquote>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar" aria-hidden="true">M</div>
+              <div>
+                <span class="testimonial-name">Margaret</span>
+                <span class="testimonial-detail">Client, Age 71</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Thomas -->
+          <div class="testimonial-card-lg fade-in" role="listitem">
+            <span class="stars" aria-label="5 stars">★★★★★</span>
+            <span class="quote-mark" aria-hidden="true">"</span>
+            <blockquote>"Professional, compassionate, and reliable. Jollygood has exceeded all of our expectations. We couldn't ask for better care."</blockquote>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar" aria-hidden="true">T</div>
+              <div>
+                <span class="testimonial-name">Thomas</span>
+                <span class="testimonial-detail">Client, Age 65</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Sarah -->
+          <div class="testimonial-card-lg fade-in" role="listitem">
+            <span class="stars" aria-label="5 stars">★★★★★</span>
+            <span class="quote-mark" aria-hidden="true">"</span>
+            <blockquote>"The companionship services have been a blessing for our father. He looks forward to his companion's visits every day!"</blockquote>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar" aria-hidden="true">S</div>
+              <div>
+                <span class="testimonial-name">Sarah</span>
+                <span class="testimonial-detail">Family Member</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA STRIP -->
+    <section class="cta-strip" aria-label="Contact call-to-action">
+      <div class="container">
+        <span class="section-label" style="color:var(--color-accent);">Join Our Happy Clients</span>
+        <h2>Talk with someone who cares</h2>
+        <p>Experience the Jollygood difference for yourself. Reach out today — no pressure, no obligation.</p>
+        <div class="btn-group">
+          <a href="tel:9136087373" class="btn btn-phone btn-lg">(913) 608-7373</a>
+          <a href="contact.html" class="btn btn-outline-white btn-lg">Send a Message</a>
+        </div>
+        <div style="margin-top:1.5rem;">
+          <div class="contact-info-block">
+            <div class="contact-info-item">
+              <a href="mailto:angelsalcedo@jollygoodcompanions.com">angelsalcedo@jollygoodcompanions.com</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="footer-logo" aria-label="Jollygood Companions — Home">
+            <img src="images/logo-white.png" alt="Jollygood Companions" class="footer-logo-img" />
+          </a>
+          <p>Compassionate, non-medical companion care for seniors and individuals in the Kansas City metro area.</p>
+          <ul class="footer-contact-list" aria-label="Contact information">
+            <li><span aria-hidden="true"></span><a href="tel:9136087373">(913) 608-7373</a></li>
+            <li><span aria-hidden="true"></span><a href="mailto:angelsalcedo@jollygoodcompanions.com">angelsalcedo@jollygoodcompanions.com</a></li>
+            <li><span aria-hidden="true"></span><span style="color:var(--color-footer-text);">Kansas City Metro Area</span></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul class="footer-nav-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="team.html">Team</a></li>
+            <li><a href="testimonials.html">Testimonials</a></li>
+            <li><a href="partners.html">Partners</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>More</h4>
+          <ul class="footer-nav-list">
+            <li><a href="privacy-policy.html">Privacy Policy</a></li>
+            <li><a href="https://www.jollygoodhomes.com" target="_blank" rel="noopener">JollyGood Homes ↗</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 Jollygood Companion Services. All Rights Reserved.</p>
+        <a href="privacy-policy.html">Privacy Policy</a>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" id="back-to-top" aria-label="Back to top">↑</button>
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Trusted Partners — Jollygood Companions</title>
+  <meta name="description" content="Jollygood Companions partners with carefully vetted service providers in Kansas City who share our commitment to excellence and customer care." />
+
+  <link rel="icon" href="images/icon.png" type="image/png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/global.css" />
+
+  <style>
+    .partners-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+      gap: 2rem;
+      align-items: start;
+    }
+
+    .partner-card-full {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border-light);
+      border-radius: var(--radius-md);
+      padding: 2.25rem;
+      box-shadow: var(--shadow-card);
+      transition: all var(--transition);
+    }
+
+    .partner-card-full:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .partner-card-header {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .partner-logo-placeholder {
+      width: 60px;
+      height: 60px;
+      background: var(--color-primary-light);
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
+      flex-shrink: 0;
+    }
+
+    .partner-name-group h3 {
+      margin-bottom: 0.2rem;
+    }
+
+    .partner-category {
+      font-size: 0.78rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--color-text-muted);
+    }
+
+    .partner-desc {
+      color: var(--color-text-muted);
+      font-size: 0.95rem;
+      line-height: 1.65;
+      margin-bottom: 1.5rem;
+    }
+
+    .partner-contacts {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      padding-top: 1.25rem;
+      border-top: 1px solid var(--color-border-light);
+    }
+
+    .partner-contact-row {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 0.9rem;
+    }
+
+    .partner-contact-row .ci-label {
+      font-size: 1rem;
+    }
+
+    .partner-contact-row a {
+      color: var(--color-primary-mid);
+      font-weight: 500;
+    }
+
+    .partner-contact-row a:hover {
+      color: var(--color-primary);
+    }
+
+    .partner-cta-section {
+      background: var(--color-surface-alt);
+    }
+
+    .partner-cta-card {
+      background: var(--color-surface);
+      border: 2px solid var(--color-border-light);
+      border-radius: var(--radius-lg);
+      padding: 3rem;
+      text-align: center;
+      max-width: 640px;
+      margin: 0 auto;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .partner-cta-card h2 {
+      margin-bottom: 0.75rem;
+    }
+
+    .partner-cta-card p {
+      color: var(--color-text-muted);
+      max-width: 460px;
+      margin: 0 auto 1.75rem;
+    }
+
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+    .fade-in.in-view {
+      opacity: 1;
+      transform: none;
+    }
+
+    @media (max-width: 480px) {
+      .partners-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* ---- Healthcare / Professional Referral Section ---- */
+    .referral-section {
+      background: linear-gradient(155deg, #0d1f2d 0%, #25435D 100%);
+    }
+
+    .referral-intro {
+      max-width: 680px;
+      margin: 0 auto 3rem;
+      text-align: center;
+    }
+
+    .referral-intro .section-label {
+      color: var(--color-accent);
+    }
+
+    .referral-intro h2 {
+      color: #fff;
+    }
+
+    .referral-intro p {
+      color: rgba(255,255,255,0.72);
+      font-size: 1rem;
+      line-height: 1.7;
+    }
+
+    .referral-types-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.25rem;
+      margin-bottom: 3rem;
+    }
+
+    .referral-type-card {
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: var(--radius-md);
+      padding: 1.75rem 1.5rem;
+      transition: background var(--transition);
+    }
+
+    .referral-type-card:hover {
+      background: rgba(255,255,255,0.11);
+    }
+
+    .referral-type-card h3 {
+      font-size: 1.05rem;
+      color: #fff;
+      margin-bottom: 0.5rem;
+    }
+
+    .referral-type-card p {
+      font-size: 0.88rem;
+      color: rgba(255,255,255,0.65);
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    .referral-type-label {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.09em;
+      color: var(--color-accent);
+      margin-bottom: 0.5rem;
+    }
+
+    .referral-promise {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: var(--radius-md);
+      padding: 2rem 2.25rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .referral-promise h3 {
+      color: #fff;
+      font-size: 1.1rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .referral-promise-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem 2rem;
+    }
+
+    .referral-promise-item {
+      display: flex;
+      gap: 0.65rem;
+      align-items: flex-start;
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.8);
+      line-height: 1.5;
+    }
+
+    .referral-promise-check {
+      color: var(--color-accent);
+      font-weight: 800;
+      font-size: 0.95rem;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .referral-cta-row {
+      text-align: center;
+    }
+
+    .referral-cta-row p {
+      color: rgba(255,255,255,0.55);
+      font-size: 0.88rem;
+      margin-top: 0.85rem;
+    }
+
+    @media (max-width: 700px) {
+      .referral-types-grid {
+        grid-template-columns: 1fr;
+      }
+      .referral-promise-list {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+
+  <!-- =====================================================================
+       ANALYTICS — Replace placeholder IDs before going live
+       ===================================================================== -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+  <script>
+  !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+  n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+  document,'script','https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', 'XXXXXXXXXXXXXXX');
+  fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=XXXXXXXXXXXXXXX&ev=PageView&noscript=1"/></noscript>
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="site-header" role="banner">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo" aria-label="Jollygood Companions — Home">
+        <img src="images/logo-white.png" alt="Jollygood Companions" class="nav-logo-img" />
+      </a>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="team.html">Team</a>
+        <a href="testimonials.html">Testimonials</a>
+        <a href="https://www.jollygoodhomes.com" target="_blank" rel="noopener">JollyGood Homes</a>
+        <a href="partners.html" class="active">Partners</a>
+        <a href="contact.html" class="nav-cta">Contact</a>
+      </nav>
+      <button class="nav-hamburger" id="nav-hamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+  <nav class="nav-mobile" id="nav-mobile" aria-label="Mobile navigation">
+    <a href="index.html">Home</a>
+    <a href="services.html">Services</a>
+    <a href="team.html">Team</a>
+    <a href="testimonials.html">Testimonials</a>
+    <a href="https://www.jollygoodhomes.com" target="_blank" rel="noopener">JollyGood Homes ↗</a>
+    <a href="partners.html" class="active">Partners</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <main id="main-content">
+
+    <!-- PAGE HERO -->
+    <section class="page-hero" aria-label="Page header">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="index.html">Home</a>
+          <span class="sep" aria-hidden="true">›</span>
+          <span aria-current="page">Partners</span>
+        </nav>
+        <h1>Our Trusted Partners</h1>
+        <p>Carefully selected service providers who share our commitment to excellence and customer care.</p>
+      </div>
+    </section>
+
+    <!-- PARTNERS INTRO + GRID -->
+    <section class="section" aria-labelledby="partners-heading">
+      <div class="container">
+        <div class="text-center section-title-block center fade-in" style="margin-bottom:3rem;">
+          <span class="section-label">Service Partners</span>
+          <h2 id="partners-heading" class="section-title">Partners We Stand Behind</h2>
+          <p class="section-subtitle">We've carefully selected service providers who share our commitment to excellence and customer care — extending our ability to serve your needs.</p>
+        </div>
+
+        <div style="background: var(--color-primary-light); border: 1px solid rgba(28,74,110,0.15); border-radius: var(--radius-sm); padding: 0.85rem 1.25rem; margin-bottom: 2.5rem; display:flex; align-items:center; gap:0.6rem; font-size:0.9rem; color: var(--color-primary-dark);" role="note" class="fade-in">
+                    <span>Each partner below has been <strong>vetted to ensure they meet our high standards</strong> for professionalism, reliability, and customer satisfaction.</span>
+        </div>
+
+        <div class="partners-grid">
+
+          <!-- Ecoswift -->
+          <div class="partner-card-full fade-in" aria-label="Ecoswift Junk Removal partner">
+            <div class="partner-card-header">
+              <div class="partner-logo-placeholder" aria-hidden="true"></div>
+              <div class="partner-name-group">
+                <h3>Ecoswift Junk Removal</h3>
+                <p class="partner-category">Junk Removal &amp; Hauling</p>
+                <span class="badge badge-success" style="margin-top:0.4rem;">Vetted Partner</span>
+              </div>
+            </div>
+            <p class="partner-desc">
+              Professional eco-friendly junk removal offering fast, reliable, and hassle-free removal of unwanted items. Whether clearing out a room, preparing a home for move-in, or hauling away old furniture, Ecoswift gets it done with care for both you and the environment.
+            </p>
+            <div class="partner-contacts">
+              <div class="partner-contact-row">
+                <a href="tel:8168782347">816-878-2347</a>
+              </div>
+              <div class="partner-contact-row">
+                <a href="mailto:swifteco2025@gmail.com">swifteco2025@gmail.com</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Coming Soon -->
+          <div class="coming-soon-card fade-in" style="display:flex; flex-direction:column; justify-content:center; min-height:260px;">
+            <h3>More Partners Coming Soon</h3>
+            <p>We're actively expanding our network of trusted service providers in Kansas City. Check back soon for new partners.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- HEALTHCARE & PROFESSIONAL REFERRALS -->
+    <section class="section referral-section" aria-labelledby="referral-heading">
+      <div class="container">
+
+        <div class="referral-intro fade-in">
+          <span class="section-label">For Healthcare Professionals</span>
+          <h2 id="referral-heading">Referring a Client? Your Reputation Is Safe With Us.</h2>
+          <p>When you recommend a care provider to a family, your professional credibility is on the line. We hold ourselves to the same standard you hold yourself to — reliable communication, vetted caregivers, and care that's actually delivered as described.</p>
+        </div>
+
+        <div class="referral-types-grid">
+
+          <div class="referral-type-card fade-in">
+            <span class="referral-type-label">Elder Law Attorneys &amp; Estate Planners</span>
+            <h3>When Clients Need More Than Legal Guidance</h3>
+            <p>Families setting up power of attorney or trusts often simultaneously need in-home support. We're a name you can confidently give them — professional, non-medical, and flexible enough for virtually any care situation.</p>
+          </div>
+
+          <div class="referral-type-card fade-in">
+            <span class="referral-type-label">Geriatric Care Managers</span>
+            <h3>An Agency That Communicates Like a Partner</h3>
+            <p>We know that when an Aging Life Care Professional makes a referral, they need consistent follow-through. We document care, respond promptly, and flag concerns — so you can manage a client's full care picture with confidence.</p>
+          </div>
+
+          <div class="referral-type-card fade-in">
+            <span class="referral-type-label">Hospital &amp; Rehab Discharge Planners</span>
+            <h3>We Answer the Phone and We Can Start Fast</h3>
+            <p>We understand discharge timelines. When a family needs home support arranged before their loved one leaves the facility, speed and reliability matter. We're ready to coordinate quickly and keep communication clear.</p>
+          </div>
+
+          <div class="referral-type-card fade-in">
+            <span class="referral-type-label">Primary Care &amp; Specialty Physicians</span>
+            <h3>Non-Medical Support That Complements Your Care</h3>
+            <p>When a patient needs more day-to-day support than clinical staff can provide, companion care fills the gap — medication reminders, transportation to follow-up appointments, and help maintaining the routines you've recommended.</p>
+          </div>
+
+        </div>
+
+        <div class="referral-promise fade-in">
+          <h3>What You Can Expect When You Refer to Jollygood</h3>
+          <div class="referral-promise-list">
+            <div class="referral-promise-item">
+              <span class="referral-promise-check">✓</span>
+              <span>Prompt response to every referral — we treat your clients like our own</span>
+            </div>
+            <div class="referral-promise-item">
+              <span class="referral-promise-check">✓</span>
+              <span>Background-checked, vetted companions you can vouch for</span>
+            </div>
+            <div class="referral-promise-item">
+              <span class="referral-promise-check">✓</span>
+              <span>Flexible scheduling including same-week starts for urgent needs</span>
+            </div>
+            <div class="referral-promise-item">
+              <span class="referral-promise-check">✓</span>
+              <span>Open communication — we keep you informed when you need to be</span>
+            </div>
+            <div class="referral-promise-item">
+              <span class="referral-promise-check">✓</span>
+              <span>No long-term contracts for clients — easy for families to get started</span>
+            </div>
+            <div class="referral-promise-item">
+              <span class="referral-promise-check">✓</span>
+              <span>Non-medical care that stays in its lane and complements clinical oversight</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="referral-cta-row fade-in">
+          <a href="contact.html" class="btn btn-phone btn-lg">Set Up a Referral Conversation</a>
+          <p>Reach us directly at <a href="tel:9136087373" style="color:rgba(255,255,255,0.65); text-decoration:underline;">(913) 608-7373</a> or use the contact form — mention you're a referring professional and we'll prioritize your inquiry.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- BECOME A PARTNER -->
+    <section class="section partner-cta-section section-alt" aria-labelledby="become-partner-heading">
+      <div class="container">
+        <div class="partner-cta-card fade-in">
+          <h2 id="become-partner-heading">Interested in Becoming a Partner?</h2>
+          <p>If you're a service provider who shares our values of quality and genuine customer care, we'd love to hear from you. We're always looking for great companies to refer to the people we serve.</p>
+          <a href="contact.html" class="btn btn-primary btn-lg">Get In Touch</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA STRIP -->
+    <section class="cta-strip" aria-label="Contact call-to-action">
+      <div class="container">
+        <span class="section-label" style="color:var(--color-accent);">Need More Help?</span>
+        <h2>Talk with someone who cares</h2>
+        <p>Have questions about our partners or services? We're happy to help you find the right resources.</p>
+        <div class="btn-group">
+          <a href="tel:9136087373" class="btn btn-phone btn-lg">(913) 608-7373</a>
+          <a href="contact.html" class="btn btn-outline-white btn-lg">Send a Message</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="footer-logo" aria-label="Jollygood Companions — Home">
+            <img src="images/logo-white.png" alt="Jollygood Companions" class="footer-logo-img" />
+          </a>
+          <p>Compassionate, non-medical companion care for seniors and individuals in the Kansas City metro area.</p>
+          <ul class="footer-contact-list" aria-label="Contact information">
+            <li><span aria-hidden="true"></span><a href="tel:9136087373">(913) 608-7373</a></li>
+            <li><span aria-hidden="true"></span><a href="mailto:angelsalcedo@jollygoodcompanions.com">angelsalcedo@jollygoodcompanions.com</a></li>
+            <li><span aria-hidden="true"></span><span style="color:var(--color-footer-text);">Kansas City Metro Area</span></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul class="footer-nav-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="team.html">Team</a></li>
+            <li><a href="testimonials.html">Testimonials</a></li>
+            <li><a href="partners.html">Partners</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>More</h4>
+          <ul class="footer-nav-list">
+            <li><a href="privacy-policy.html">Privacy Policy</a></li>
+            <li><a href="https://www.jollygoodhomes.com" target="_blank" rel="noopener">JollyGood Homes ↗</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 Jollygood Companion Services. All Rights Reserved.</p>
+        <a href="privacy-policy.html">Privacy Policy</a>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" id="back-to-top" aria-label="Back to top">↑</button>
+  <script src="js/main.js"></script>
+</body>
+</html>

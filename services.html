@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Services — Jollygood Companions</title>
+  <meta name="description" content="Explore all companion care services offered by Jollygood Companions in Kansas City — personal care, companionship, homemaking, meals, transportation, medication reminders, respite care, and more." />
+
+  <link rel="icon" href="images/icon.png" type="image/png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/global.css" />
+
+  <style>
+    /* Services page specific */
+    .service-full-card {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border-light);
+      border-radius: var(--radius-md);
+      padding: 2.25rem;
+      box-shadow: var(--shadow-card);
+      transition: all var(--transition);
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .service-full-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-md);
+      border-color: var(--color-border);
+    }
+
+    .service-full-icon {
+      font-size: 2.5rem;
+      flex-shrink: 0;
+      width: 60px;
+      height: 60px;
+      background: var(--color-primary-light);
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .service-full-body h3 {
+      font-size: 1.2rem;
+      margin-bottom: 0.6rem;
+      color: var(--color-text-dark);
+    }
+
+    .service-full-body ul {
+      list-style: disc;
+      padding-left: 1.25rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
+    }
+
+    .service-full-body ul li {
+      font-size: 0.92rem;
+      color: var(--color-text-muted);
+      line-height: 1.5;
+    }
+
+    .services-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    .notice-box {
+      background: #FBF7E2;
+      border: 1px solid #EDCC66;
+      border-radius: var(--radius-sm);
+      padding: 0.75rem 1rem;
+      font-size: 0.88rem;
+      color: #4A3900;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.5rem;
+      margin-top: 0.75rem;
+    }
+
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+    .fade-in.in-view {
+      opacity: 1;
+      transform: none;
+    }
+
+    @media (max-width: 640px) {
+      .service-full-card {
+        flex-direction: column;
+        gap: 1rem;
+      }
+    }
+  </style>
+
+  <!-- =====================================================================
+       ANALYTICS — Replace placeholder IDs before going live
+       ===================================================================== -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+  <script>
+  !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+  n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+  document,'script','https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', 'XXXXXXXXXXXXXXX');
+  fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=XXXXXXXXXXXXXXX&ev=PageView&noscript=1"/></noscript>
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="site-header" role="banner">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo" aria-label="Jollygood Companions — Home">
+        <img src="images/logo-white.png" alt="Jollygood Companions" class="nav-logo-img" />
+      </a>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="services.html" class="active">Services</a>
+        <a href="team.html">Team</a>
+        <a href="testimonials.html">Testimonials</a>
+        <a href="https://www.jollygoodhomes.com" target="_blank" rel="noopener">JollyGood Homes</a>
+        <a href="partners.html">Partners</a>
+        <a href="contact.html" class="nav-cta">Contact</a>
+      </nav>
+      <button class="nav-hamburger" id="nav-hamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+  <nav class="nav-mobile" id="nav-mobile" aria-label="Mobile navigation">
+    <a href="index.html">Home</a>
+    <a href="services.html" class="active">Services</a>
+    <a href="team.html">Team</a>
+    <a href="testimonials.html">Testimonials</a>
+    <a href="https://www.jollygoodhomes.com" target="_blank" rel="noopener">JollyGood Homes ↗</a>
+    <a href="partners.html">Partners</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <main id="main-content">
+
+    <!-- PAGE HERO -->
+    <section class="page-hero" aria-label="Page header">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="index.html">Home</a>
+          <span class="sep" aria-hidden="true">›</span>
+          <span aria-current="page">Services</span>
+        </nav>
+        <h1>Our Services</h1>
+        <p>Discover the benefits of our home companions — personalized care that fits your life.</p>
+      </div>
+    </section>
+
+    <!-- SERVICES LIST -->
+    <section class="section" aria-labelledby="services-list-heading">
+      <div class="container">
+        <div class="text-center section-title-block center fade-in" style="margin-bottom:3rem;">
+          <span class="section-label">Full Service Menu</span>
+          <h2 id="services-list-heading" class="section-title">Everything We Provide</h2>
+          <p class="section-subtitle">We offer flexible, compassionate care across a wide range of non-medical services — all designed around you.</p>
+        </div>
+
+        <div class="services-list">
+
+          <!-- 1. Personal Care -->
+          <div class="service-full-card fade-in">
+            <div class="service-full-icon" aria-hidden="true"></div>
+            <div class="service-full-body">
+              <h3>Personal Care Assistance</h3>
+              <ul>
+                <li>Bathing and showering assistance</li>
+                <li>Dressing and grooming support</li>
+                <li>Hair and skin care</li>
+                <li>Toileting and incontinence support</li>
+                <li>Mobility assistance</li>
+                <li>Oral hygiene</li>
+                <li>Meal setup and feeding support</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- 2. Companionship -->
+          <div class="service-full-card fade-in">
+            <div class="service-full-icon" aria-hidden="true"></div>
+            <div class="service-full-body">
+              <h3>Companionship &amp; Social Engagement</h3>
+              <ul>
+                <li>Meaningful conversation and active listening</li>
+                <li>Social outings and community involvement</li>
+                <li>Faith service accompaniment</li>
+                <li>Reading, games, and television</li>
+                <li>Hobby encouragement and support</li>
+                <li>Emotional wellness and support</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- 3. Homemaking -->
+          <div class="service-full-card fade-in">
+            <div class="service-full-icon" aria-hidden="true"></div>
+            <div class="service-full-body">
+              <h3>Homemaking &amp; Household Support</h3>
+              <ul>
+                <li>Laundry and linen changes</li>
+                <li>Vacuuming and dusting</li>
+                <li>Dishwashing and kitchen cleanup</li>
+                <li>Home organization</li>
+                <li>Trash removal</li>
+                <li>Mail and package collection</li>
+                <li>Light pet and plant care</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- 4. Meals -->
+          <div class="service-full-card fade-in">
+            <div class="service-full-icon" aria-hidden="true"></div>
+            <div class="service-full-body">
+              <h3>Meal Planning &amp; Preparation</h3>
+              <ul>
+                <li>Daily meal preparation</li>
+                <li>Light grocery shopping</li>
+                <li>Hydration reminders</li>
+                <li>Post-meal cleanup</li>
+                <li>Special and therapeutic diet accommodation</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- 5. Transportation -->
+          <div class="service-full-card fade-in">
+            <div class="service-full-icon" aria-hidden="true"></div>
+            <div class="service-full-body">
+              <h3>Errands &amp; Transportation</h3>
+              <ul>
+                <li>Non-medical doctor and specialist appointments</li>
+                <li>Grocery and pharmacy runs</li>
+                <li>Salon and barber visits</li>
+                <li>Post office and bank errands</li>
+                <li>Prescription pickup</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- 6. Medication -->
+          <div class="service-full-card fade-in">
+            <div class="service-full-icon" aria-hidden="true"></div>
+            <div class="service-full-body">
+              <h3>Medication Reminders</h3>
+              <ul>
+                <li>Verbal medication reminders</li>
+                <li>Pill box organization assistance</li>
+              </ul>
+              <div class="notice-box" role="note">
+                                <span>We do <strong>not</strong> dispense or administer medications. Our companions provide reminders only.</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 7. Respite -->
+          <div class="service-full-card fade-in">
+            <div class="service-full-icon" aria-hidden="true"></div>
+            <div class="service-full-body">
+              <h3>Respite Care for Family Caregivers</h3>
+              <ul>
+                <li>Daily care coverage while family caregivers rest</li>
+                <li>Overnight care options</li>
+                <li>Flexible scheduling for temporary or continuous relief</li>
+                <li>Peace of mind knowing your loved one is in good hands</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- 8. Specialized -->
+          <div class="service-full-card fade-in">
+            <div class="service-full-icon" aria-hidden="true"></div>
+            <div class="service-full-body">
+              <h3>Specialized Non-Medical Support</h3>
+              <ul>
+                <li>Dementia and Alzheimer's companionship</li>
+                <li>Hospice partnership and end-of-life support</li>
+                <li>Post-hospital discharge assistance</li>
+                <li>Behavioral understanding and gentle redirection</li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Availability Box -->
+        <div class="availability-box fade-in" style="margin-top:3rem;" role="complementary" aria-label="Service availability">
+          <div>
+            <h3>Flexible Scheduling — No Long-Term Contracts</h3>
+            <p>Daily, overnight, and 24/7 care options are available. We build care plans tailored to your needs and schedule, with no long-term commitment required. Start whenever you're ready.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CTA STRIP -->
+    <section class="cta-strip" aria-label="Contact call-to-action">
+      <div class="container">
+        <span class="section-label" style="color:var(--color-accent);">Get Started Today</span>
+        <h2>Let's talk about your care needs</h2>
+        <p>We'd love to learn how we can help. Reach out by phone or email — no pressure, just a conversation.</p>
+        <div class="btn-group">
+          <a href="tel:9136087373" class="btn btn-phone btn-lg">(913) 608-7373</a>
+          <a href="contact.html" class="btn btn-outline-white btn-lg">Send a Message</a>
+        </div>
+        <div style="margin-top:1.5rem;">
+          <div class="contact-info-block">
+            <div class="contact-info-item">
+              <a href="mailto:angelsalcedo@jollygoodcompanions.com">angelsalcedo@jollygoodcompanions.com</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="footer-logo" aria-label="Jollygood Companions — Home">
+            <img src="images/logo-white.png" alt="Jollygood Companions" class="footer-logo-img" />
+          </a>
+          <p>Compassionate, non-medical companion care for seniors and individuals in the Kansas City metro area.</p>
+          <ul class="footer-contact-list" aria-label="Contact information">
+            <li><span aria-hidden="true"></span><a href="tel:9136087373">(913) 608-7373</a></li>
+            <li><span aria-hidden="true"></span><a href="mailto:angelsalcedo@jollygoodcompanions.com">angelsalcedo@jollygoodcompanions.com</a></li>
+            <li><span aria-hidden="true"></span><span style="color:var(--color-footer-text);">Kansas City Metro Area</span></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul class="footer-nav-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="team.html">Team</a></li>
+            <li><a href="testimonials.html">Testimonials</a></li>
+            <li><a href="partners.html">Partners</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>More</h4>
+          <ul class="footer-nav-list">
+            <li><a href="privacy-policy.html">Privacy Policy</a></li>
+            <li><a href="https://www.jollygoodhomes.com" target="_blank" rel="noopener">JollyGood Homes ↗</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 Jollygood Companion Services. All Rights Reserved.</p>
+        <a href="privacy-policy.html">Privacy Policy</a>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" id="back-to-top" aria-label="Back to top">↑</button>
+  <script src="js/main.js"></script>
+</body>
+</html>

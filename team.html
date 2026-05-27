@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Meet Our Team — Jollygood Companions</title>
+  <meta name="description" content="Meet the compassionate caregivers at Jollygood Companions in Kansas City. Our team is carefully selected and trained to provide dignified, professional companion care." />
+
+  <link rel="icon" href="images/icon.png" type="image/png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/global.css" />
+
+  <style>
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+      gap: 2rem;
+    }
+
+    .team-quote {
+      background: var(--color-primary-light);
+      border-left: 4px solid var(--color-primary);
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      padding: 1rem 1.25rem;
+      margin-top: 1rem;
+      font-style: italic;
+      color: var(--color-primary-dark);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    .hire-cta-section {
+      background: var(--color-surface-alt);
+    }
+
+    .hire-cta-card {
+      background: var(--color-surface);
+      border: 2px solid var(--color-border-light);
+      border-radius: var(--radius-lg);
+      padding: 3rem;
+      text-align: center;
+      box-shadow: var(--shadow-sm);
+      max-width: 640px;
+      margin: 0 auto;
+    }
+
+    .hire-cta-card h2 {
+      margin-bottom: 0.75rem;
+    }
+
+    .hire-cta-card p {
+      color: var(--color-text-muted);
+      max-width: 460px;
+      margin: 0 auto 1.75rem;
+    }
+
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+    .fade-in.in-view {
+      opacity: 1;
+      transform: none;
+    }
+  </style>
+
+  <!-- =====================================================================
+       ANALYTICS — Replace placeholder IDs before going live
+       ===================================================================== -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+  <script>
+  !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+  n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+  document,'script','https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', 'XXXXXXXXXXXXXXX');
+  fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=XXXXXXXXXXXXXXX&ev=PageView&noscript=1"/></noscript>
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="site-header" role="banner">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo" aria-label="Jollygood Companions — Home">
+        <img src="images/logo-white.png" alt="Jollygood Companions" class="nav-logo-img" />
+      </a>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="team.html" class="active">Team</a>
+        <a href="testimonials.html">Testimonials</a>
+        <a href="https://www.jollygoodhomes.com" target="_blank" rel="noopener">JollyGood Homes</a>
+        <a href="partners.html">Partners</a>
+        <a href="contact.html" class="nav-cta">Contact</a>
+      </nav>
+      <button class="nav-hamburger" id="nav-hamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+  <nav class="nav-mobile" id="nav-mobile" aria-label="Mobile navigation">
+    <a href="index.html">Home</a>
+    <a href="services.html">Services</a>
+    <a href="team.html" class="active">Team</a>
+    <a href="testimonials.html">Testimonials</a>
+    <a href="https://www.jollygoodhomes.com" target="_blank" rel="noopener">JollyGood Homes ↗</a>
+    <a href="partners.html">Partners</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <main id="main-content">
+
+    <!-- PAGE HERO -->
+    <section class="page-hero" aria-label="Page header">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="index.html">Home</a>
+          <span class="sep" aria-hidden="true">›</span>
+          <span aria-current="page">Team</span>
+        </nav>
+        <h1>Meet Our Team</h1>
+        <p>Carefully selected, trained, and dedicated companions who put your wellbeing first.</p>
+      </div>
+    </section>
+
+    <!-- TEAM INTRO -->
+    <section class="section" aria-labelledby="team-intro-heading">
+      <div class="container">
+        <div class="text-center section-title-block center fade-in" style="margin-bottom:3rem;">
+          <span class="section-label">Our Caregivers</span>
+          <h2 id="team-intro-heading" class="section-title">People Who Truly Care</h2>
+          <p class="section-subtitle">Every Jollygood companion is selected for their compassion, reliability, and genuine desire to make a difference in the lives of the people they serve.</p>
+        </div>
+
+        <div class="team-grid">
+
+          <!-- Joshua -->
+          <div class="team-card fade-in">
+            <div class="team-avatar" role="img" aria-label="Photo of Joshua, Senior Caregiver">
+                          </div>
+            <div class="team-body">
+              <h3>Joshua</h3>
+              <p class="team-role">Senior Caregiver</p>
+              <div class="team-stat">
+                                14+ Years of Experience
+              </div>
+              <p>Originally from Springfield, Illinois, Joshua graduated from Lincoln Land Community College. Now 36, he specializes in working with senior citizens and individuals with mental health challenges, with a focus on enhancing quality of life and promoting independence.</p>
+              <div class="team-quote">
+                "My goal as a caregiver is simple: to make life a little easier for those who need it most. Helping others isn't just what I do — it's who I am."
+                <br><strong style="display:block; margin-top:0.5rem; font-style:normal;">— Joshua</strong>
+              </div>
+              <div class="team-services" aria-label="Services provided">
+                <span class="team-service-tag">Senior Care</span>
+                <span class="team-service-tag">Mental Health Support</span>
+                <span class="team-service-tag">Transportation</span>
+                <span class="team-service-tag">Meal Preparation</span>
+                <span class="team-service-tag">Mobility Assistance</span>
+                <span class="team-service-tag">24-Hour Care</span>
+                <span class="team-service-tag">Companionship</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Coming Soon -->
+          <div class="coming-soon-card fade-in" style="display:flex; flex-direction:column; justify-content:center; min-height:300px;">
+            <h3>More Team Bios Coming Soon</h3>
+            <p>We're growing our team of compassionate caregivers. Check back soon to meet more of the dedicated people behind Jollygood Companions.</p>
+            <div style="margin-top:1.25rem;">
+              <a href="contact.html" class="btn btn-outline" style="font-size:0.9rem;">Join Our Team</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- OUR HIRING PROMISE -->
+    <section class="section hire-cta-section section-alt" aria-labelledby="hiring-heading">
+      <div class="container">
+        <div class="hire-cta-card fade-in">
+          <h2 id="hiring-heading">Interested in Joining Our Team?</h2>
+          <p>We're always looking for compassionate, dependable people who share our commitment to dignity and exceptional care. If that sounds like you, we'd love to hear from you.</p>
+          <a href="contact.html" class="btn btn-primary btn-lg">Get In Touch</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA STRIP -->
+    <section class="cta-strip" aria-label="Contact call-to-action">
+      <div class="container">
+        <span class="section-label" style="color:var(--color-accent);">Ready to Get Started?</span>
+        <h2>Talk with someone who cares</h2>
+        <p>Questions about our team or services? We're here to help you find the right companion for your needs.</p>
+        <div class="btn-group">
+          <a href="tel:9136087373" class="btn btn-phone btn-lg">(913) 608-7373</a>
+          <a href="contact.html" class="btn btn-outline-white btn-lg">Send a Message</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="footer-logo" aria-label="Jollygood Companions — Home">
+            <img src="images/logo-white.png" alt="Jollygood Companions" class="footer-logo-img" />
+          </a>
+          <p>Compassionate, non-medical companion care for seniors and individuals in the Kansas City metro area.</p>
+          <ul class="footer-contact-list" aria-label="Contact information">
+            <li><span aria-hidden="true"></span><a href="tel:9136087373">(913) 608-7373</a></li>
+            <li><span aria-hidden="true"></span><a href="mailto:angelsalcedo@jollygoodcompanions.com">angelsalcedo@jollygoodcompanions.com</a></li>
+            <li><span aria-hidden="true"></span><span style="color:var(--color-footer-text);">Kansas City Metro Area</span></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul class="footer-nav-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="team.html">Team</a></li>
+            <li><a href="testimonials.html">Testimonials</a></li>
+            <li><a href="partners.html">Partners</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>More</h4>
+          <ul class="footer-nav-list">
+            <li><a href="privacy-policy.html">Privacy Policy</a></li>
+            <li><a href="https://www.jollygoodhomes.com" target="_blank" rel="noopener">JollyGood Homes ↗</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 Jollygood Companion Services. All Rights Reserved.</p>
+        <a href="privacy-policy.html">Privacy Policy</a>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" id="back-to-top" aria-label="Back to top">↑</button>
+  <script src="js/main.js"></script>
+</body>
+</html>
