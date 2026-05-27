@@ -26,7 +26,9 @@
       min-height: 92vh;
       display: flex;
       align-items: center;
-      background: linear-gradient(155deg, #0d1f2d 0%, #25435D 50%, #1e3a50 100%);
+      background:
+        linear-gradient(155deg, rgba(13,31,45,0.88) 0%, rgba(37,67,93,0.82) 50%, rgba(30,58,80,0.88) 100%),
+        url('images/photos/hero-background.jpg') center/cover no-repeat;
       overflow: hidden;
     }
 
@@ -261,6 +263,38 @@
       transform: none;
     }
 
+    /* Gallery photos */
+    .gallery-item:nth-child(1) .gallery-item-inner {
+      background-image: url('images/photos/gallery-outdoor-walk.jpg');
+      background-size: cover;
+      background-position: center top;
+    }
+    .gallery-item:nth-child(2) .gallery-item-inner {
+      background-image: url('images/photos/gallery-garden-rose.jpg');
+      background-size: cover;
+      background-position: center;
+    }
+    .gallery-item:nth-child(3) .gallery-item-inner {
+      background-image: url('images/photos/gallery-car-walker.jpg');
+      background-size: cover;
+      background-position: center;
+    }
+    .gallery-item:nth-child(4) .gallery-item-inner {
+      background-image: url('images/photos/gallery-reading-tea.jpg');
+      background-size: cover;
+      background-position: center;
+    }
+    .gallery-item:nth-child(5) .gallery-item-inner {
+      background-image: url('images/photos/gallery-indoor-walker.jpg');
+      background-size: cover;
+      background-position: center;
+    }
+    .gallery-item:nth-child(6) .gallery-item-inner {
+      background-image: url('images/photos/gallery-wheelchair-smile.jpg');
+      background-size: cover;
+      background-position: center;
+    }
+
     @media (max-width: 768px) {
       .home-hero { min-height: 100svh; }
       .why-choose-grid { grid-template-columns: 1fr; }
@@ -480,27 +514,27 @@
 
         <div class="gallery-grid">
           <div class="gallery-item fade-in">
-            <div class="gallery-item-inner" aria-hidden="true"></div>
-            <div class="gallery-caption">Providing compassionate daily support</div>
+            <div class="gallery-item-inner" role="img" aria-label="Companion walking outdoors with a smiling senior"></div>
+            <div class="gallery-caption">Outdoor walks &amp; fresh air</div>
           </div>
           <div class="gallery-item fade-in">
-            <div class="gallery-item-inner" aria-hidden="true"></div>
-            <div class="gallery-caption">Building meaningful connections</div>
+            <div class="gallery-item-inner" role="img" aria-label="Caregiver sharing a warm moment with a senior in the garden"></div>
+            <div class="gallery-caption">Genuine connection every day</div>
           </div>
           <div class="gallery-item fade-in">
-            <div class="gallery-item-inner" aria-hidden="true"></div>
-            <div class="gallery-caption">Care with dignity and respect</div>
+            <div class="gallery-item-inner" role="img" aria-label="Companion helping a senior with a walker out of a car"></div>
+            <div class="gallery-caption">Safe transportation assistance</div>
           </div>
           <div class="gallery-item fade-in">
-            <div class="gallery-item-inner" aria-hidden="true"></div>
-            <div class="gallery-caption">Here to help with daily needs</div>
+            <div class="gallery-item-inner" role="img" aria-label="Companion reading with a senior over a cup of tea"></div>
+            <div class="gallery-caption">Companionship &amp; quiet moments</div>
           </div>
           <div class="gallery-item fade-in">
-            <div class="gallery-item-inner" aria-hidden="true"></div>
-            <div class="gallery-caption">Professional and caring service</div>
+            <div class="gallery-item-inner" role="img" aria-label="Companion helping a senior with a walker indoors"></div>
+            <div class="gallery-caption">Mobility support at home</div>
           </div>
           <div class="gallery-item fade-in">
-            <div class="gallery-item-inner" aria-hidden="true"></div>
+            <div class="gallery-item-inner" role="img" aria-label="Companion smiling with an elderly woman in a wheelchair outdoors"></div>
             <div class="gallery-caption">Trusted like family</div>
           </div>
         </div>
